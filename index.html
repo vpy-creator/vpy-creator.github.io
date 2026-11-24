@@ -1,1 +1,397 @@
-Hello World
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tư duy tương lai · Vũ Phi Yên</title>
+<meta name="description" content="Căn phòng trên tầng cao của Vũ Phi Yên: tư duy tương lai là gì, và vì sao con người cần nó vào lúc này.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400&family=Lora:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --day-loi:#eef8ff; --quang-hong:#e9c8ff; --quang-lam:#b4c4ff;
+  --than-am:#d3b8fd; --than-lanh:#8fb2f5; --mat:#2f55a8;
+  --dem-day:#33287b; --dem-giua:#423b91; --dem-dinh:#5354a5;
+  --chu:rgba(238,248,255,.88); --chu-nhe:rgba(238,248,255,.62);
+  --font:'Be Vietnam Pro',system-ui,sans-serif; --font-nghieng:'Lora',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);font-weight:300;color:var(--chu);background:var(--dem-day);line-height:1.85;font-size:clamp(16px,1.05vw + 12px,19px);overflow-x:hidden}
+html[data-lang="vi"] [lang="en"],html[data-lang="en"] [lang="vi"]{display:none!important}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* thanh tren */
+.thanh{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:18px clamp(18px,4vw,48px);pointer-events:none}
+.thanh>*{pointer-events:auto}
+.cum{display:flex;align-items:center;gap:clamp(4px,1vw,12px);padding:2px 6px;border-radius:999px;background:rgba(66,56,150,.26);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.nut{width:44px;height:44px;display:grid;place-items:center;border:0;background:transparent;color:var(--day-loi);cursor:pointer;border-radius:50%;transition:transform .5s ease,background .5s ease}
+.nut:hover,.nut:focus-visible{background:rgba(238,248,255,.08);transform:translateY(-2px);outline:none}
+.nut svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 3px var(--quang-lam)) drop-shadow(0 0 8px rgba(180,196,255,.55))}
+.ngu{display:flex;gap:2px;font-size:13px;letter-spacing:.14em}
+.ngu button{font:inherit;font-weight:300;letter-spacing:inherit;color:var(--chu-nhe);background:transparent;border:0;padding:10px 8px;cursor:pointer;transition:color .4s}
+.ngu button[aria-pressed="true"]{color:var(--day-loi);text-shadow:0 0 10px var(--quang-lam)}
+.am .tat{opacity:0;transition:opacity .4s}
+.am[aria-pressed="false"] .tat{opacity:1}
+.am[aria-pressed="false"] .song{opacity:.25}
+
+/* canh mo dau */
+.mo-dau{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;background:linear-gradient(var(--dem-dinh),var(--dem-day))}
+.canh{--W:max(100vw,150svh);position:absolute;top:50%;width:var(--W);height:calc(var(--W)/1.5);left:clamp(calc(100vw - var(--W)),calc(50vw - .66*var(--W)),0px);transform:translateY(-50%);animation:tho 26s ease-in-out infinite alternate}
+.canh img{width:100%;height:100%;object-fit:cover}
+.quang{position:absolute;border-radius:50%;pointer-events:none;mix-blend-mode:screen;transform:translate(-50%,-50%)}
+.quang.den{left:61.1%;top:63.6%;width:9%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,222,214,.75),rgba(233,200,255,.28) 38%,transparent 68%);animation:nhip 5.5s ease-in-out infinite}
+.quang.phong{left:76.3%;top:16.8%;width:22%;aspect-ratio:1.1;background:radial-gradient(ellipse,rgba(233,200,255,.34),rgba(211,184,253,.12) 45%,transparent 70%);animation:nhip 8s ease-in-out infinite 1.2s}
+@keyframes tho{from{transform:translateY(-50%) scale(1)}to{transform:translateY(-50%) scale(1.045)}}
+@keyframes nhip{0%,100%{opacity:.45}50%{opacity:1}}
+.mo-dau::after{content:"";position:absolute;inset:auto 0 0 0;height:22%;background:linear-gradient(transparent,var(--dem-day));pointer-events:none}
+.loi-mo{position:absolute;z-index:2;left:clamp(22px,8vw,140px);top:50%;transform:translateY(-52%);max-width:min(30em,44vw)}
+.nhan{font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--chu-nhe);margin-bottom:1.6em}
+h1{font-weight:200;font-size:clamp(40px,6.2vw,92px);line-height:1.08;letter-spacing:.01em;color:var(--day-loi);text-shadow:0 0 18px rgba(180,196,255,.55),0 0 46px rgba(180,196,255,.25);margin-bottom:.5em;white-space:nowrap}
+.dan{font-family:var(--font-nghieng);font-style:italic;font-size:clamp(18px,1.5vw + 10px,25px);line-height:1.65;color:var(--chu)}
+.moi{position:absolute;z-index:2;left:clamp(22px,8vw,140px);bottom:34px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--chu-nhe);text-decoration:none;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.moi i{display:block;width:1px;height:42px;background:linear-gradient(var(--day-loi),transparent);box-shadow:0 0 8px var(--quang-lam);animation:roi 3.2s ease-in-out infinite}
+@keyframes roi{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* cac phong */
+.phong{position:relative;padding:clamp(80px,13vh,170px) clamp(22px,8vw,140px)}
+.phong.mot{background:linear-gradient(var(--dem-day),#453c9f 20%,#4d45b3 52%,#42359d 100%)}
+.phong.hai{background:linear-gradient(#42359d,#4a47a8 34%,#4844a6 60%,#3d3393 100%)}
+.phong.ba{background:linear-gradient(#3d3393,#4a4aa6 58%,#5560b6 84%,#7885d8 100%);padding-bottom:clamp(140px,24vh,260px)}
+.luoi{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(30px,6vw,110px);align-items:center;max-width:1280px;margin:0 auto}
+.luoi.dao .hinh{order:-1}
+.hinh{position:relative}
+.hinh img{width:100%;height:auto;-webkit-mask-image:linear-gradient(transparent,#000 16%,#000 88%,transparent),linear-gradient(90deg,transparent,#000 26%,#000 74%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(transparent,#000 16%,#000 88%,transparent),linear-gradient(90deg,transparent,#000 26%,#000 74%,transparent);mask-composite:intersect}
+.hinh .troi{animation:troi 14s ease-in-out infinite alternate}
+@keyframes troi{from{transform:translateY(0)}to{transform:translateY(-14px)}}
+.chu{max-width:33em}
+h2{font-weight:200;font-size:clamp(28px,3.3vw,50px);line-height:1.2;letter-spacing:.015em;color:var(--day-loi);text-shadow:0 0 16px rgba(180,196,255,.4);margin-bottom:1em}
+.chu p,.giua>p{margin-bottom:1.35em}
+.day{display:block;width:min(240px,60%);height:22px;margin:0 0 2.2em;overflow:visible}
+.day path{fill:none;stroke:var(--day-loi);stroke-width:1.3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 0 3px var(--quang-lam)) drop-shadow(0 0 9px rgba(180,196,255,.6));transition:stroke-dashoffset 2.6s cubic-bezier(.4,0,.2,1) .2s}
+.hien .day path{stroke-dashoffset:0}
+.cach{list-style:none;margin-top:2.4em;display:grid;gap:1.9em}
+.cach h3{font-weight:300;font-size:1.02em;letter-spacing:.06em;color:var(--day-loi);margin-bottom:.35em;display:flex;align-items:center;gap:.8em}
+.cach h3::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--day-loi);box-shadow:0 0 8px 2px var(--quang-hong);flex:none;animation:nhip 4.5s ease-in-out infinite}
+.cach li:nth-child(2) h3::before{animation-delay:1.5s}
+.cach li:nth-child(3) h3::before{animation-delay:3s}
+.cach p{margin:0;color:var(--chu)}
+blockquote{font-family:var(--font-nghieng);font-style:italic;font-size:1.1em;line-height:1.6;color:var(--day-loi);margin:.9em 0 0;padding-left:1.2em;border-left:1px solid rgba(238,248,255,.45)}
+blockquote cite{display:block;font-family:var(--font);font-style:normal;font-size:.72em;letter-spacing:.16em;text-transform:uppercase;color:var(--chu-nhe);margin-top:.6em}
+
+/* nguoi giu phong */
+.giua{max-width:40em;margin:0 auto;text-align:left}
+.giua .day{margin-left:0}
+.bang{list-style:none;margin-top:2.6em;border-top:1px solid rgba(238,248,255,.22)}
+.bang li{padding:1.05em 0;border-bottom:1px solid rgba(238,248,255,.22);display:grid;grid-template-columns:minmax(0,1fr);gap:.15em}
+.bang b{font-weight:400;color:var(--day-loi);letter-spacing:.02em}
+.bang span{color:var(--chu-nhe);font-size:.92em}
+
+/* binh minh */
+.ket{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:start center;overflow:hidden;background:#7885d8}
+.ket .nen{position:absolute;inset:0}
+.ket .nen img{width:100%;height:100%;object-fit:cover;object-position:35% 60%;animation:thoket 30s ease-in-out infinite alternate}
+@keyframes thoket{from{transform:scale(1)}to{transform:scale(1.05)}}
+.ket::before{content:"";position:absolute;z-index:1;inset:0 0 auto 0;height:34%;background:linear-gradient(#7885d8,rgba(120,133,216,.6) 45%,transparent);pointer-events:none}
+.loi-ket{position:relative;z-index:2;text-align:center;padding:clamp(110px,19vh,200px) 24px 0}
+.loi-ket p{font-family:var(--font-nghieng);font-style:italic;font-size:clamp(24px,2.5vw + 10px,42px);line-height:1.45;max-width:14.5em;text-wrap:balance;color:#fff;text-shadow:0 0 22px rgba(74,68,166,.75),0 0 60px rgba(74,68,166,.5)}
+.chan{position:absolute;z-index:2;inset:auto 0 22px 0;text-align:center;font-size:12px;letter-spacing:.24em;color:rgba(42,36,88,.78)}
+
+/* hien dan */
+.cho{opacity:0;transform:translateY(26px);transition:opacity 1.5s ease,transform 1.5s cubic-bezier(.2,.6,.2,1)}
+.hien .cho,.cho.hien{opacity:1;transform:none}
+.hien .cho:nth-child(2){transition-delay:.15s}.hien .cho:nth-child(3){transition-delay:.3s}.hien .cho:nth-child(4){transition-delay:.45s}.hien .cho:nth-child(5){transition-delay:.6s}
+
+/* hat sang */
+#hat{position:fixed;inset:0;z-index:30;pointer-events:none}
+
+/* la thu */
+.man{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:20px;background:rgba(30,24,78,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .6s ease,visibility .6s}
+.man.mo{opacity:1;visibility:visible}
+.thu{width:min(520px,100%);max-height:calc(100svh - 40px);overflow:auto;padding:clamp(26px,5vw,44px);border-radius:22px;background:linear-gradient(160deg,rgba(211,184,253,.2),rgba(143,178,245,.13));border:1px solid rgba(238,248,255,.5);box-shadow:0 0 0 1px rgba(180,196,255,.15),0 0 28px rgba(180,196,255,.35),inset 0 0 50px rgba(238,248,255,.05);transform:translateY(18px);transition:transform .7s cubic-bezier(.2,.6,.2,1)}
+.man.mo .thu{transform:none}
+.thu h2{font-size:clamp(22px,2.4vw,30px);margin-bottom:.4em}
+.thu .ghi{color:var(--chu-nhe);font-size:.9em;margin-bottom:1.6em}
+.thu label{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--chu-nhe);margin:1.3em 0 .3em}
+.thu input,.thu textarea{width:100%;font:inherit;font-weight:300;color:var(--day-loi);background:transparent;border:0;border-bottom:1px solid rgba(238,248,255,.42);padding:.5em 0;outline:none;transition:border-color .4s,box-shadow .4s;resize:vertical}
+.thu textarea{min-height:7.5em}
+.thu input:focus,.thu textarea:focus{border-color:var(--day-loi);box-shadow:0 10px 14px -12px var(--quang-lam)}
+.thu .bay{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.hang{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:2em}
+.gui{font:inherit;font-weight:300;letter-spacing:.14em;color:var(--day-loi);background:rgba(238,248,255,.06);border:1px solid rgba(238,248,255,.6);border-radius:999px;padding:.7em 1.9em;cursor:pointer;box-shadow:0 0 14px rgba(180,196,255,.35);transition:background .4s,box-shadow .4s,opacity .4s}
+.gui:hover,.gui:focus-visible{background:rgba(238,248,255,.16);box-shadow:0 0 22px rgba(180,196,255,.6);outline:none}
+.gui[disabled]{opacity:.45;cursor:default}
+.dong{font:inherit;font-size:.9em;color:var(--chu-nhe);background:transparent;border:0;cursor:pointer;padding:.6em 0}
+.bao{min-height:1.6em;margin-top:1.2em;font-size:.95em;color:var(--day-loi)}
+
+@media (max-width:860px){
+  .loi-mo{top:auto;bottom:13%;transform:none;max-width:calc(100vw - 44px);left:22px}
+  h1{white-space:normal}
+  .moi{bottom:16px}
+  .moi i{height:22px}
+  .mo-dau::before{content:"";position:absolute;z-index:1;inset:35% 0 0 0;background:linear-gradient(transparent,rgba(51,40,123,.72) 45%,rgba(51,40,123,.9));pointer-events:none}
+  .canh{top:0;transform:none;animation:none;--W:max(100vw,98svh);left:clamp(calc(100vw - var(--W)),calc(50vw - .69*var(--W)),0px)}
+  .luoi{grid-template-columns:1fr}
+  .luoi.dao .hinh{order:0}
+  .hinh{max-width:420px;margin:0 auto}
+  .ket .nen img{object-position:11% 60%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important}
+  .cho{opacity:1;transform:none;transition:none}
+  .day path{stroke-dashoffset:0;transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body id="dau">
+
+<header class="thanh">
+  <div class="cum">
+    <!-- Nút về nhà: khi website có trang chủ, đổi href bên dưới thành địa chỉ trang chủ. -->
+    <a class="nut" id="ve-nha" href="#dau" aria-label="Trang chủ" title="Trang chủ">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M5.2 22.5V11.2L13 3.4l7.8 7.8v11.3h-5.1v-6.4c0-3.4-5.4-3.4-5.4 0v6.4H5.2"/></svg>
+    </a>
+  </div>
+  <div class="cum">
+    <div class="ngu" role="group" aria-label="Ngôn ngữ · Language">
+      <button type="button" data-ngu="vi" aria-pressed="true">VI</button>
+      <button type="button" data-ngu="en" aria-pressed="false">EN</button>
+    </div>
+    <button class="nut am" id="am" type="button" aria-pressed="false" aria-label="Âm nhạc" title="Âm nhạc">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><path class="song" d="M3.5 13c1.6-5.4 3.2-5.4 4.8 0s3.200 5.400 4.800 0 3.200-5.400 4.800 0 3.200 5.400 4.600 0"/><path class="tat" d="M5 21 21 5"/></svg>
+    </button>
+    <button class="nut" id="mo-thu" type="button" aria-haspopup="dialog" aria-label="Viết thư" title="Viết thư">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3.6 7.2h18.800v12.400H3.600V7.200l9.400 7.300 9.400-7.300"/></svg>
+    </button>
+  </div>
+</header>
+
+<canvas id="hat" aria-hidden="true"></canvas>
+
+<main>
+  <section class="mo-dau">
+    <div class="canh">
+      <img src="assets/fut-01-hero.webp" width="1536" height="1024" alt="" fetchpriority="high">
+      <span class="quang den"></span><span class="quang phong"></span>
+    </div>
+    <div class="loi-mo">
+      <p class="nhan cho hien"><span lang="vi">Căn phòng trên tầng cao</span><span lang="en">The room on the high floor</span></p>
+      <h1 class="cho hien"><span lang="vi">Tư duy tương lai</span><span lang="en">Futures thinking</span></h1>
+      <p class="dan cho hien">
+        <span lang="vi">Ngôi nhà của tôi có một căn phòng nằm trên tầng cao. Lên tới đây, ta ngồi xuống bên cửa sổ và trò chuyện về những tương lai còn chưa thành hình.</span>
+        <span lang="en">My house keeps a room on a high floor. Up here we sit by the window and talk about futures that have yet to take shape.</span>
+      </p>
+    </div>
+    <a class="moi" href="#la-gi"><span lang="vi">Mời bạn bước vào</span><span lang="en">Come in</span><i></i></a>
+  </section>
+
+  <section class="phong mot" id="la-gi">
+    <div class="luoi quan">
+      <div class="chu">
+        <svg class="day" viewBox="0 0 240 22" aria-hidden="true"><path pathLength="1" d="M2 12c22-13 36 11 58 1s30-13 52-2 34 10 56 0 40-9 70 2"/></svg>
+        <h2 class="cho"><span lang="vi">Tư duy tương lai là gì</span><span lang="en">What futures thinking is</span></h2>
+        <p class="cho">
+          <span lang="vi">Tư duy tương lai là cách luyện cho tâm trí nhìn xa hơn tầm mắt quen thuộc. Ta hình dung thế giới của mười năm tới với đủ chi tiết để cảm nhận được nó, rồi quay về hôm nay với những lựa chọn sáng suốt hơn.</span>
+          <span lang="en">Futures thinking trains the mind to see farther than its habitual horizon. We imagine the world ten years from now in enough detail to feel it, then return to today with wiser choices.</span>
+        </p>
+        <p class="cho">
+          <span lang="vi">Trong tiếng Anh, người ta viết futures với chữ s ở cuối, vì phía trước luôn mở ra nhiều ngả cùng lúc. Người thực hành nhìn mọi ngả ấy bằng con mắt bình tĩnh: ngả đáng mong, ngả đáng lo, và cả những ngả hôm nay nghe còn kỳ lạ.</span>
+          <span lang="en">The word carries an s because what lies ahead always opens in several directions at once. A practitioner looks at all of them with a steady eye: the hoped for, the feared, and the ones that still sound strange today.</span>
+        </p>
+        <ul class="cach cho">
+          <li>
+            <h3><span lang="vi">Lắng nghe tín hiệu</span><span lang="en">Listening for signals</span></h3>
+            <p><span lang="vi">Tương lai gửi tin về từ rất sớm, qua những điều nhỏ bé và lạ lùng đang xảy ra ở đâu đó. Nhà văn William Gibson đã nói điều ấy thật gọn.</span><span lang="en">The future sends word early, through small and strange things already happening somewhere. The writer William Gibson said it best.</span></p>
+            <blockquote>The future is already here, it’s just not very evenly distributed.<cite>William Gibson</cite></blockquote>
+          </li>
+          <li>
+            <h3><span lang="vi">Lật ngược điều hiển nhiên</span><span lang="en">Flipping the facts</span></h3>
+            <p><span lang="vi">Ta chọn lấy một điều hôm nay ai cũng coi là bất di bất dịch, rồi thử sống trong thế giới nơi điều ấy đã đổi khác.</span><span lang="en">We take something everyone treats as fixed today, and try living in a world where it has changed.</span></p>
+          </li>
+          <li>
+            <h3><span lang="vi">Đi dạo qua nhiều kịch bản</span><span lang="en">Walking through scenarios</span></h3>
+            <p><span lang="vi">Cùng một hôm nay có thể dẫn tới tăng trưởng, tới giới hạn, tới sụp đổ, hay tới chuyển hoá. Ai đã đi dạo trước qua từng kịch bản sẽ vững vàng hơn khi một kịch bản thành sự thật.</span><span lang="en">The same present can lead to growth, to constraint, to collapse, or to transformation. Whoever has already walked through each scenario stands steadier when a scenario comes true.</span></p>
+          </li>
+        </ul>
+      </div>
+      <figure class="hinh cho"><img class="troi" src="assets/fut-02-paths.webp" width="1024" height="1536" alt="" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="phong hai" id="vi-sao">
+    <div class="luoi dao quan">
+      <div class="chu">
+        <svg class="day" viewBox="0 0 240 22" aria-hidden="true"><path pathLength="1" d="M2 10c30 12 44-10 70-2s34 12 60 2 44-10 66 0 30 8 40 2"/></svg>
+        <h2 class="cho"><span lang="vi">Vì sao là lúc này</span><span lang="en">Why now</span></h2>
+        <p class="cho">
+          <span lang="vi">Thế giới đang đổi thay nhanh hơn sức tưởng tượng của phần đông chúng ta. Trí tuệ nhân tạo bước vào từng công việc, khí hậu vẽ lại bản đồ nơi con người sinh sống, y sinh học kéo dài tuổi thọ và mở lại câu hỏi thế nào là trọn một đời người.</span>
+          <span lang="en">The world is changing faster than most of us can imagine. Artificial intelligence is entering every kind of work, the climate is redrawing the map of where people can live, and biomedicine is extending lifespans and reopening the question of what a full human life is.</span>
+        </p>
+        <p class="cho">
+          <span lang="vi">Những năm vừa qua cho ta thấy điều tưởng như viễn tưởng có thể thành tin tức buổi sáng. Khi một điều chưa từng được hình dung ập tới, tâm trí dễ đóng băng trong cú sốc. Khi điều ấy đã được tưởng tượng từ trước, ta nhận ra nó sớm hơn, giữ được bình tĩnh và còn khoảng rộng để lựa chọn.</span>
+          <span lang="en">Recent years have shown that what sounded like fiction can become the morning news. When something never imagined arrives, the mind tends to freeze in shock. When it has been imagined beforehand, we recognise it sooner, stay calm, and still have room to choose.</span>
+        </p>
+        <p class="cho">
+          <span lang="vi">Vì vậy, tư duy tương lai cũng là một cách chăm sóc tâm trí. Nó trao cho mỗi người cảm giác mình có phần trong việc định hình ngày mai, và trao cho gia đình, tổ chức, cộng đồng một ngôn ngữ chung để cùng nhau chuẩn bị.</span>
+          <span lang="en">This makes futures thinking a way of caring for the mind as well. It gives each person the sense of having a hand in shaping tomorrow, and gives families, organisations and communities a shared language for preparing together.</span>
+        </p>
+      </div>
+      <figure class="hinh cho"><img class="troi" src="assets/fut-03-signals.webp" width="1024" height="1536" alt="" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="phong ba" id="nguoi-giu-phong">
+    <div class="giua quan">
+      <svg class="day" viewBox="0 0 240 22" aria-hidden="true"><path pathLength="1" d="M2 12c24-12 40 10 64 0s36-12 60 0 34 10 58 0 34-8 54 1"/></svg>
+      <h2 class="cho"><span lang="vi">Người giữ căn phòng</span><span lang="en">The keeper of this room</span></h2>
+      <p class="cho">
+        <span lang="vi">Tôi là Vũ Phi Yên, một futurist, đồng thời là nhà tâm lý lâm sàng và người dẫn dắt người lớn học tập. Tôi đã hoàn thành chương trình Futures Thinking Specialization của Institute for the Future, nơi tôi được học cùng Jane McGonigal, tác giả cuốn Imaginable.</span>
+        <span lang="en">I am Vũ Phi Yên, a futurist, a clinical psychologist and an educator of adults. I completed the Futures Thinking Specialization of the Institute for the Future, where I studied with Jane McGonigal, author of Imaginable.</span>
+      </p>
+      <p class="cho">
+        <span lang="vi">Tôi mang tư duy tương lai về gần với tâm lý học: nhìn xa để tâm trí kịp chuẩn bị, và để mỗi người tìm thấy phần việc của mình giữa những đổi thay lớn. Thỉnh thoảng tôi mời vài người bạn lên căn phòng này. Chúng tôi pha trà, nhìn ra cửa sổ và trò chuyện về những ngày chưa tới.</span>
+        <span lang="en">I bring futures thinking close to psychology: looking far ahead so the mind has time to prepare, and so each person can find their own part in the great changes. Now and then I invite a few friends up to this room. We make tea, look out of the window and talk about days that have yet to come.</span>
+      </p>
+      <ul class="bang cho">
+        <li><b>Futures Thinking Specialization</b><span><span lang="vi">Institute for the Future, trên Coursera. Giảng viên: Jane McGonigal.</span><span lang="en">Institute for the Future, on Coursera. Taught by Jane McGonigal.</span></span></li>
+        <li><b><span lang="vi">Tiến sĩ Di truyền Y học</span><span lang="en">PhD, Medical Genetics</span></b><span><span lang="vi">Nền khoa học cho cách nhìn hệ thống và dài hạn.</span><span lang="en">The scientific ground for a long, systemic view.</span></span></li>
+        <li><b><span lang="vi">Thạc sĩ Tâm lý học lâm sàng</span><span lang="en">MA, Clinical Psychology</span></b><span><span lang="vi">Nhiều năm tham vấn và dẫn dắt người lớn học tập.</span><span lang="en">Years of counselling and of guiding adult learners.</span></span></li>
+        <li><b><span lang="vi">Tác giả sách Mô hình Xoắn động</span><span lang="en">Author of Mô hình Xoắn động</span></b><span><span lang="vi">Cuốn sách tiếng Việt về Spiral Dynamics.</span><span lang="en">A Vietnamese book on Spiral Dynamics.</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ket" id="binh-minh">
+    <div class="nen"><img src="assets/fut-04-dawn.webp" width="1536" height="1024" alt="" loading="lazy"></div>
+    <div class="loi-ket quan">
+      <p class="cho"><span lang="vi">Hẹn gặp bạn ở tương lai do chúng ta cùng tạo ra.</span><span lang="en">See you in the future we create together.</span></p>
+    </div>
+    <p class="chan">VŨ PHI YÊN</p>
+  </section>
+</main>
+
+<div class="man" id="man" role="dialog" aria-modal="true" aria-labelledby="ten-thu">
+  <form class="thu" id="thu" novalidate>
+    <h2 id="ten-thu"><span lang="vi">Một lá thư cho căn phòng</span><span lang="en">A letter for this room</span></h2>
+    <p class="ghi"><span lang="vi">Lời nhắn của bạn sẽ tới thẳng hộp thư của Yên.</span><span lang="en">Your message goes straight to Yên’s inbox.</span></p>
+    <label for="f-ten"><span lang="vi">Tên của bạn</span><span lang="en">Your name</span></label>
+    <input id="f-ten" name="ten" type="text" autocomplete="name" maxlength="120">
+    <label for="f-email"><span lang="vi">Email, nếu bạn muốn được hồi âm</span><span lang="en">Email, if you would like a reply</span></label>
+    <input id="f-email" name="email" type="email" autocomplete="email" maxlength="160">
+    <label for="f-loi"><span lang="vi">Lời nhắn</span><span lang="en">Message</span></label>
+    <textarea id="f-loi" name="loi" required maxlength="4000"></textarea>
+    <input class="bay" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="hang">
+      <button class="dong" type="button" id="dong-thu"><span lang="vi">Đóng lại</span><span lang="en">Close</span></button>
+      <button class="gui" type="submit" id="gui"><span lang="vi">Gửi thư</span><span lang="en">Send</span></button>
+    </div>
+    <p class="bao" id="bao" role="status" aria-live="polite"></p>
+  </form>
+</div>
+
+<audio id="nhac" src="assets/fut-phong-tren-tang-cao.mp3" loop preload="none"></audio>
+
+<script>
+/* ===== Cấu hình hộp thư chung của website =====
+   endpoint: địa chỉ Web App (Apps Script) gắn với Google Sheet "Website Vũ Phi Yên - Thư từ các phòng".
+   phong:    mã của căn phòng này; mỗi phòng trên website dùng một mã riêng, thư sẽ vào đúng tab của phòng. */
+const HOP_THU = {
+  endpoint: "https://script.google.com/macros/s/AKfycbwmw1mWdW33-nmGemFBGkfoM0z1G2VDlizyeDOjgxU3JyTh-ZzErQlU-CtX5oJLaTlG/exec",
+  phong: "phong-tuong-lai",
+  tenPhong: "Phòng tương lai"
+};
+
+const LOI = {
+  vi: { thieu: "Bạn viết vài dòng rồi hãy gửi nhé.", dangGui: "Lá thư đang lên đường...", xong: "Thư của bạn đã tới nơi. Cảm ơn bạn thật nhiều.", loi: "Thư chưa gửi đi được. Bạn thử lại sau ít phút nhé.", chuaNoi: "Hộp thư của căn phòng đang được nối dây. Bạn quay lại sau nhé." },
+  en: { thieu: "Please write a few lines before sending.", dangGui: "Your letter is on its way...", xong: "Your letter has arrived. Thank you so much.", loi: "The letter could not be sent. Please try again in a few minutes.", chuaNoi: "The mailbox of this room is still being wired. Please come back later." }
+};
+
+const goc = document.documentElement;
+const ngu = () => goc.dataset.lang;
+
+/* --- ngôn ngữ --- */
+function datNgu(l){
+  goc.dataset.lang = l; goc.lang = l;
+  document.querySelectorAll(".ngu button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.ngu === l)));
+  document.title = l === "vi" ? "Tư duy tương lai · Vũ Phi Yên" : "Futures thinking · Vũ Phi Yên";
+  try { localStorage.setItem("vpy-ngu", l); } catch(e){}
+}
+document.querySelectorAll(".ngu button").forEach(b => b.addEventListener("click", () => datNgu(b.dataset.ngu)));
+try { const l = localStorage.getItem("vpy-ngu"); if (l === "en" || l === "vi") datNgu(l); } catch(e){}
+
+/* --- hiện dần khi cuộn tới --- */
+const mat = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("hien"); mat.unobserve(e.target); } }), { threshold: .14 });
+document.querySelectorAll(".quan").forEach(el => mat.observe(el));
+
+/* --- hạt sáng bay lên --- */
+(function(){
+  const c = document.getElementById("hat"), x = c.getContext("2d");
+  const lang = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, d, hat = [];
+  function co(){ d = Math.min(devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight; c.width = W * d; c.height = H * d; c.style.width = W + "px"; c.style.height = H + "px"; x.setTransform(d,0,0,d,0,0);
+    const n = Math.round(Math.min(70, W * H / 26000)); hat = Array.from({length:n}, () => moi(true)); }
+  function moi(dau){ return { x: Math.random()*W, y: dau ? Math.random()*H : H + 8, r: .5 + Math.random()*1.25, v: .08 + Math.random()*.26, l: Math.random()*6.28, t: .006 + Math.random()*.016, m: Math.random() < .2 }; }
+  function ve(){
+    x.clearRect(0,0,W,H);
+    for (const h of hat){
+      h.y -= h.v; h.l += h.t; h.x += Math.sin(h.l) * .16;
+      if (h.y < -8) Object.assign(h, moi(false));
+      const a = (.28 + .5 * (.5 + .5*Math.sin(h.l*2.1))) * Math.min(1, (H - h.y) / (H*.3) + .25);
+      const g = x.createRadialGradient(h.x,h.y,0,h.x,h.y,h.r*4.2);
+      g.addColorStop(0, "rgba(238,248,255," + a.toFixed(3) + ")");
+      g.addColorStop(.3, (h.m ? "rgba(233,200,255," : "rgba(180,196,255,") + (a*.4).toFixed(3) + ")");
+      g.addColorStop(1, "rgba(180,196,255,0)");
+      x.fillStyle = g; x.beginPath(); x.arc(h.x,h.y,h.r*4.2,0,6.283); x.fill();
+    }
+    if (!lang) requestAnimationFrame(ve);
+  }
+  addEventListener("resize", co); co(); ve();
+})();
+
+/* --- âm nhạc: tắt sẵn, người xem tự bật --- */
+(function(){
+  const n = document.getElementById("nhac"), b = document.getElementById("am");
+  let hen;
+  function nang(den){ clearInterval(hen); hen = setInterval(() => { const v = n.volume + (den > n.volume ? .02 : -.02); if (Math.abs(v - den) < .025){ n.volume = den; clearInterval(hen); if (den === 0) n.pause(); } else n.volume = Math.max(0, Math.min(1, v)); }, 60); }
+  b.addEventListener("click", () => {
+    const bat = b.getAttribute("aria-pressed") !== "true";
+    b.setAttribute("aria-pressed", String(bat));
+    if (bat){ n.volume = 0; n.play().then(() => nang(.42)).catch(() => b.setAttribute("aria-pressed","false")); }
+    else nang(0);
+  });
+})();
+
+/* --- lá thư --- */
+(function(){
+  const man = document.getElementById("man"), f = document.getElementById("thu"), bao = document.getElementById("bao"), gui = document.getElementById("gui");
+  let truoc;
+  function mo(){ truoc = document.activeElement; man.classList.add("mo"); bao.textContent = ""; setTimeout(() => document.getElementById("f-ten").focus(), 350); }
+  function dong(){ man.classList.remove("mo"); if (truoc) truoc.focus(); }
+  document.getElementById("mo-thu").addEventListener("click", mo);
+  document.getElementById("dong-thu").addEventListener("click", dong);
+  man.addEventListener("click", e => { if (e.target === man) dong(); });
+  addEventListener("keydown", e => { if (e.key === "Escape" && man.classList.contains("mo")) dong(); });
+  f.addEventListener("submit", async e => {
+    e.preventDefault();
+    const L = LOI[ngu()], d = new FormData(f);
+    if (d.get("website")) return;                       /* bẫy máy gửi thư rác */
+    const loi = (d.get("loi") || "").trim();
+    if (!loi){ bao.textContent = L.thieu; return; }
+    if (!HOP_THU.endpoint){ bao.textContent = L.chuaNoi; return; }
+    gui.disabled = true; bao.textContent = L.dangGui;
+    try {
+      const r = await fetch(HOP_THU.endpoint, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ phong: HOP_THU.phong, tenPhong: HOP_THU.tenPhong, ten: (d.get("ten")||"").trim(), email: (d.get("email")||"").trim(), loi, ngu: ngu(), trang: location.href }) });
+      const k = await r.json();
+      if (!k.ok) throw new Error(k.loi || "loi");
+      bao.textContent = L.xong; f.reset();
+    } catch(err){ bao.textContent = L.loi; }
+    gui.disabled = false;
+  });
+})();
+</script>
+</body>
+</html>
