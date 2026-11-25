@@ -18,6 +18,9 @@ vpy-creator.github.io/
 ├── my-treasure-map/        My Treasure Map (trang khóa học)
 │   ├── index.html
 │   └── assets/             ảnh bản đồ buổi sớm, sổ thực địa, bàn tròn, nhạc lên đường
+├── soul-of-life/           Soul of Life (trang khóa học, chàm đêm và ngọc lục)
+│   ├── index.html
+│   └── assets/             cây trong đêm, bàn đêm ánh nến
 ├── .nojekyll               GitHub Pages phục vụ file y nguyên, bỏ qua Jekyll
 └── README.md
 ```
@@ -27,6 +30,7 @@ vpy-creator.github.io/
 - Hiên nhà: `https://vpy-creator.github.io/`
 - Phòng Tương lai: `https://vpy-creator.github.io/phong-tuong-lai/`
 - My Treasure Map: `https://vpy-creator.github.io/my-treasure-map/`
+- Soul of Life: `https://vpy-creator.github.io/soul-of-life/`
 
 ## Thêm một căn phòng mới
 

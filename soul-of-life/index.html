@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="vi" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Soul of Life · Hành trình khám phá và chuyển hoá tâm hồn</title>
+<meta name="description" content="Soul of Life, hành trình khám phá và chuyển hoá tâm hồn cùng TS. BS. Vũ Phi Yên. Bí ẩn nền tảng của tâm hồn soi từ một thời đại không ngừng biến đổi.">
+<meta property="og:title" content="Soul of Life · Hành trình khám phá và chuyển hoá tâm hồn">
+<meta property="og:description" content="Bí ẩn nền tảng của tâm hồn soi từ một thời đại không ngừng biến đổi.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://phiyenvu.com/soul-of-life/assets/cay-trong-dem.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2311112C'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%237FD1C2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Lora:ital,wght@1,400;1,500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== HỒN · Bản vẽ chàm đêm: giấy màu trăng, mực chàm đêm, một vệt ngọc lục ===== */
+:root{--paper:#F1F1F7;--paper2:#E3E3F0;--ink:#1D1759;--soft:#55547C;--hair:#D2D2E4;--accent:#4FAE9E;--wash:#A6DED3;--on-accent:#11112C;--block:#1D1759;--on-block:#F1F1F7;--night:#11112C;--moon:#F1F1F7;--jade:#7FD1C2}
+html[data-mode="dark"]{--paper:#0D0C24;--paper2:#191742;--ink:#EDEEF7;--soft:#A9ABCB;--hair:#2B2960;--accent:#7FD1C2;--wash:#7FD1C2;--on-accent:#0D0C24;--block:#1B1950;--on-block:#F1F1F7}
+
+/* ===== KHUNG ===== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.85 'Be Vietnam Pro',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,dl,dd,dt,figure,blockquote{margin:0;padding:0}
+h1,h2,h3,.brand,.name{font-family:'Playfair Display',Georgia,serif;letter-spacing:.4px;font-feature-settings:"ss01" on}
+.wrap{max-width:1180px;margin:0 auto;padding:0 6vw}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--soft)}
+.eyebrow:before{content:'';display:inline-block;width:9px;height:9px;background:var(--accent);margin-right:10px}
+h2{font-size:clamp(28px,3.4vw,42px);font-weight:600;line-height:1.38}
+h3{font-size:22px;font-weight:600;line-height:1.45}
+section{scroll-margin-top:20px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.textlink{display:inline-block;padding:10px 0 6px;border-bottom:2px solid var(--accent);font-weight:600;text-decoration:none}
+.textlink:hover{border-bottom-color:currentColor}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:30px;padding-top:26px;border-top:3px solid var(--ink)}
+.band{padding:104px 0 0}
+.band.last{padding-bottom:104px}
+.prose p{max-width:40em;font-size:17px}
+.prose p+p{margin-top:18px}
+.prose a,.corner a,.spec a{text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px}
+.prose em,.q,.lead{font-family:'Lora',Georgia,serif;font-style:italic}
+.lead{font-size:19px;line-height:1.8}
+.hl{background:linear-gradient(transparent 60%,var(--wash) 60%,var(--wash) 92%,transparent 92%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+html[data-mode="dark"] .hl{background:linear-gradient(transparent 84%,var(--accent) 84%,var(--accent) 96%,transparent 96%)}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+/* Đầu trang */
+.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0}
+.brand{font-size:28px;font-weight:700;text-decoration:none}
+.brand small{display:block;font:600 11px/1.4 'Be Vietnam Pro',sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
+.top nav{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:500}
+.top nav a{text-decoration:none;padding:10px 0}
+.top nav a:hover{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px;text-decoration-color:var(--accent)}
+.pill{min-height:44px;padding:8px 16px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;font:500 13px/1.4 'Be Vietnam Pro',sans-serif;cursor:pointer}
+.pill:hover{background:var(--ink);color:var(--paper)}
+
+/* Mở đầu: bước vào đêm chàm */
+.hero{position:relative;border-top:3px solid var(--ink);background:var(--night) url(assets/cay-trong-dem.webp) right center/auto 100% no-repeat;color:var(--moon);overflow:hidden}
+.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--night) 0%,var(--night) 22%,rgba(17,17,44,.72) 40%,rgba(17,17,44,0) 62%);pointer-events:none}
+.hero .wrap{position:relative;display:flex;flex-direction:column;justify-content:center;min-height:min(88vh,800px);padding-top:76px;padding-bottom:120px}
+.hero .in{max-width:29em}
+.hero .eyebrow{color:#C9C8E6}
+.hero .eyebrow:before{background:var(--jade)}
+.hero h1{font-size:clamp(54px,7.4vw,104px);font-weight:700;line-height:1.14;margin:20px 0 18px}
+.hero h1 span{display:block;color:var(--jade)}
+.hero .sub{font:italic 400 clamp(19px,1.9vw,23px)/1.65 'Lora',Georgia,serif;color:#D5EFEA;max-width:24em}
+.hero .by{margin-top:14px;font-size:14px;letter-spacing:.6px;color:#C9C8E6}
+.epi{margin-top:38px;padding-top:20px;border-top:1px solid rgba(241,241,247,.28);max-width:25em}
+.epi p{font:italic 400 17px/1.7 'Lora',Georgia,serif}
+.epi cite{display:block;margin-top:8px;font:500 12px/1.5 'Be Vietnam Pro',sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:#C9C8E6}
+.acts{display:flex;align-items:center;flex-wrap:wrap;gap:14px 30px;margin-top:36px}
+.cta{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:14px 28px;background:var(--block);color:var(--on-block);font-weight:600;text-decoration:none;box-shadow:7px 7px 0 var(--accent);transition:transform .18s,box-shadow .18s}
+.cta:hover{box-shadow:2px 2px 0 var(--accent);transform:translate(5px,5px)}
+.cta.jade{background:var(--jade);color:#11112C;box-shadow:7px 7px 0 rgba(241,241,247,.9)}
+.cta.jade:hover{box-shadow:2px 2px 0 rgba(241,241,247,.9)}
+.hero .textlink{border-bottom-color:var(--jade)}
+
+/* Khung tên bản vẽ */
+.fx{position:relative;margin-top:-52px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--ink);background:var(--paper)}
+.facts div{padding:18px 24px;border-left:1.5px solid var(--ink)}
+.facts div:first-child{border-left:0}
+.facts dt{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
+.facts dd{font:600 20px/1.5 'Playfair Display',Georgia,serif;letter-spacing:.4px}
+
+/* Vì sao */
+.why{display:grid;grid-template-columns:1.08fr .92fr;gap:7%;align-items:start}
+.qa{border-top:1.5px solid var(--ink)}
+.qa div{padding:26px 0 28px;border-bottom:1px solid var(--hair)}
+.qa h3{font-size:24px;margin-bottom:10px}
+.qa p{font-size:16.5px}
+
+/* Khối chàm */
+.turn{background:var(--block);color:var(--on-block);padding:92px 0;margin-top:104px}
+.turn .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:7%;align-items:start}
+.turn .eyebrow{color:var(--on-block);opacity:.8}
+.turn .eyebrow:before{background:var(--jade)}
+.turn h2{margin-top:14px;font-size:clamp(27px,3.2vw,40px)}
+.turn p{font-size:17px}
+.turn p+p{margin-top:18px}
+.turn .q{font-size:17.5px;line-height:1.85}
+.turn cite{display:block;margin-top:18px;font:500 12px/1.5 'Be Vietnam Pro',sans-serif;letter-spacing:1.6px;text-transform:uppercase;opacity:.8}
+.pact{border-top:1px solid rgba(241,241,247,.3)}
+.pact div{display:grid;grid-template-columns:140px 1fr;gap:22px;padding:16px 0;border-bottom:1px solid rgba(241,241,247,.2)}
+.pact dt{font:600 19px/1.5 'Playfair Display',Georgia,serif;letter-spacing:.4px;color:var(--jade)}
+.pact dd{font-size:16px}
+
+/* Giảng viên */
+.guide{display:grid;grid-template-columns:.8fr 1.2fr;gap:8%}
+.guide>div{padding-top:26px;border-top:3px solid var(--ink)}
+.guide h2{margin-top:12px}
+.me{display:flex;align-items:center;gap:20px;margin-top:28px}
+.me img{width:92px;height:92px;flex:none;border-radius:50%;object-fit:cover;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--accent);background:var(--paper2)}
+.me .name{font-size:22px;font-weight:600;line-height:1.45}
+.corner{margin-top:34px;padding:24px 30px 26px;background:var(--paper2);border-left:5px solid var(--accent);font-size:16px;max-width:46em}
+.corner b{display:block;font:600 20px/1.5 'Playfair Display',Georgia,serif;letter-spacing:.4px;margin-bottom:6px}
+
+/* Rễ, thân, ngọn */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--ink);margin-top:44px}
+.ph{display:flex;align-items:center;gap:20px;padding:28px 30px;border-left:1.5px solid var(--ink)}
+.ph:first-child{border-left:0;background:var(--block);color:var(--on-block)}
+.ph:nth-child(2){background:var(--paper2)}
+.ph:nth-child(3){background:var(--paper)}
+.ph svg,.part svg{flex:none;width:46px;height:46px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ph svg .a,.part svg .a{stroke:var(--accent)}
+.ph:first-child svg .a{stroke:var(--jade)}
+.ph b{display:block;font:600 24px/1.4 'Playfair Display',Georgia,serif;letter-spacing:.4px}
+.ph small{display:block;font-size:11.5px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;opacity:.75}
+.said{max-width:46em;margin-top:46px;padding:6px 0 6px 28px;border-left:5px solid var(--accent)}
+.said .q{font-size:clamp(19px,2vw,23px);line-height:1.7}
+.said cite{display:block;margin-top:10px;font:500 12px/1.5 'Be Vietnam Pro',sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+
+/* Dải ảnh đêm */
+.scene{position:relative;display:flex;align-items:center;min-height:clamp(520px,42vw,680px);margin-top:104px;color:var(--moon);padding:90px 0;background:var(--night) url(assets/ban-dem-anh-nen.webp) right center/auto 100% no-repeat;overflow:hidden}
+.scene:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--night) 0%,var(--night) 24%,rgba(17,17,44,.7) 42%,rgba(17,17,44,0) 64%);pointer-events:none}
+.scene .wrap{position:relative;width:100%}
+.scene .say{max-width:29em}
+.scene .eyebrow{color:#C9C8E6}
+.scene .eyebrow:before{background:var(--jade)}
+.scene h2{margin:14px 0 20px;font-size:clamp(34px,4.4vw,58px)}
+.scene p{font-size:17px}
+.scene p+p{margin-top:16px}
+
+/* Ba phần, tám ngày */
+.part{display:flex;align-items:center;gap:20px;margin-top:84px;padding-top:26px;border-top:3px solid var(--ink)}
+.part:first-child{margin-top:64px}
+.part h3{font-size:clamp(24px,2.6vw,31px)}
+.day{display:grid;grid-template-columns:230px 1fr 290px;gap:34px;padding:34px 0;border-top:1px solid var(--hair)}
+.part+.day,.corner+.day{border-top:0}
+.day .no{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
+.day h3{font-size:24px;margin-top:4px}
+.ses{display:grid;gap:18px}
+.ses div{display:grid;grid-template-columns:112px 1fr;gap:14px}
+.ses b{white-space:nowrap;font-weight:600;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--soft);padding-top:5px}
+.ses .st{display:block;font:600 19px/1.5 'Playfair Display',Georgia,serif;letter-spacing:.4px}
+.ses .sd{display:block;font-size:15.5px;color:var(--soft)}
+.ses .sd strong{font-weight:600;color:var(--ink)}
+.take{align-self:start;padding:20px 22px;background:var(--paper2);border-left:5px solid var(--accent);font-size:15.5px}
+.take b{display:block;font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--soft);margin-bottom:4px}
+.take b+span+b{margin-top:14px}
+.take span{display:block}
+.part+.corner{margin-top:26px}
+
+/* Lời trích giữa trang */
+.quote{margin-top:104px;padding:84px 0;background:var(--paper2)}
+.quote .wrap{max-width:860px;text-align:center}
+.quote .q{font-size:clamp(18px,1.9vw,21px);line-height:1.85}
+.quote .q+.q{margin-top:16px}
+.quote cite{display:block;margin-top:22px;font:500 12px/1.5 'Be Vietnam Pro',sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+
+/* Hai sợi chỉ */
+.intro{max-width:40em;font-size:17px}
+.threads{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--ink);margin-top:38px}
+.threads>div{padding:34px 38px 38px}
+.threads>div+div{border-left:1.5px solid var(--ink);background:var(--paper2)}
+.threads .when{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
+.threads h3{font-size:25px;margin:4px 0 14px}
+.threads p{font-size:16px}
+.threads p+p{margin-top:14px}
+.threads em{font-family:'Lora',Georgia,serif;font-style:italic}
+.turn.inset{margin-top:64px;padding:0}
+.turn.inset .wrap{max-width:none;padding:54px 56px 58px;gap:6%}
+
+/* Đăng ký */
+.spec{border-top:1.5px solid var(--ink);max-width:860px}
+.spec div{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--hair)}
+.spec dt{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--soft);padding-top:7px}
+.spec dd{font-size:16.5px}
+.spec dd b{display:block;font:600 22px/1.5 'Playfair Display',Georgia,serif;letter-spacing:.4px}
+.spec dd small{display:block;font:italic 400 15.5px/1.7 'Lora',Georgia,serif;color:var(--soft)}
+
+/* Tài liệu */
+.refs{columns:2;column-gap:56px;margin-top:34px;padding-top:26px;border-top:1.5px solid var(--ink);font-size:14.5px;line-height:1.75}
+.refs p{break-inside:avoid;margin-bottom:10px;padding-left:18px;position:relative}
+.refs .new{font-weight:600}
+.refs .new:before{content:'';position:absolute;left:0;top:.62em;width:8px;height:8px;background:var(--accent)}
+
+/* Viết cho Yên */
+.letter{background:var(--block);color:var(--on-block);padding:96px 0;margin-top:104px}
+.letter .wrap{display:grid;grid-template-columns:1fr 1fr;gap:8%}
+.letter .eyebrow{color:var(--on-block);opacity:.8}
+.letter .eyebrow:before{background:var(--jade)}
+.letter h2{margin:12px 0 20px;font-size:clamp(26px,3vw,38px)}
+.letter p{font-size:17px;max-width:27em}
+.letter p+p{margin-top:10px}
+form{display:grid;gap:18px}
+label{font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;opacity:.85}
+input,textarea{display:block;width:100%;margin-top:4px;padding:12px 0;background:transparent;border:0;border-bottom:1.5px solid var(--on-block);color:inherit;font:400 17px/1.7 'Be Vietnam Pro',sans-serif;border-radius:0}
+textarea{min-height:120px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-bottom-color:var(--jade);border-bottom-width:3px}
+.bay{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.send{justify-self:start;min-height:54px;padding:14px 32px;border:0;background:var(--jade);color:#11112C;font:600 16px/1.5 'Be Vietnam Pro',sans-serif;cursor:pointer}
+.send:disabled{opacity:.6;cursor:default}
+.msg{min-height:1.8em;font:italic 400 16.5px/1.7 'Lora',Georgia,serif}
+
+/* Chân trang */
+.else{padding:40px 0 22px}
+.else .links{display:flex;flex-wrap:wrap;gap:6px 34px;font-weight:500}
+.else .links a{padding:10px 0;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:6px}
+.foot{padding:22px 0 40px;border-top:1px solid var(--hair);color:var(--soft);font-size:13.5px}
+
+@media(max-width:900px){
+  .top{flex-wrap:wrap}
+  .top nav{gap:4px 16px;font-size:13.5px;flex-wrap:wrap}
+  .why,.turn .wrap,.guide,.phases,.threads,.letter .wrap{grid-template-columns:1fr}
+  .band{padding-top:72px}
+  .band.last{padding-bottom:72px}
+  .hero{background-size:150% auto;background-position:100% 100%}
+  .hero:before{background:linear-gradient(180deg,var(--night) 0%,var(--night) calc(100% - 100vw),rgba(17,17,44,.5) calc(100% - 84vw),rgba(17,17,44,0) calc(100% - 62vw))}
+  .hero .wrap{display:block;min-height:0;padding-top:48px;padding-bottom:calc(100vw + 30px)}
+  .hero h1{font-size:clamp(50px,15vw,72px)}
+  .fx{margin-top:-34px}
+  .facts{grid-template-columns:1fr}
+  .facts div{border-left:0;border-top:1.5px solid var(--ink);padding:14px 20px}
+  .facts div:first-child{border-top:0}
+  .why{gap:38px}
+  .turn{padding:64px 0;margin-top:72px}
+  .turn .wrap{gap:26px}
+  .guide{gap:0}
+  .guide>div+div{border-top:0;padding-top:30px}
+  .ph{border-left:0;border-top:1.5px solid var(--ink);padding:22px 24px}
+  .ph:first-child{border-top:0}
+  .scene{display:block;min-height:0;margin-top:72px;padding:56px 0 calc(100vw + 10px);background-size:150% auto;background-position:100% 100%}
+  .scene:before{background:linear-gradient(180deg,var(--night) 0%,var(--night) calc(100% - 100vw),rgba(17,17,44,.5) calc(100% - 84vw),rgba(17,17,44,0) calc(100% - 62vw))}
+  .part{margin-top:64px}
+  .part:first-child{margin-top:48px}
+  .day{grid-template-columns:1fr;gap:18px;padding:30px 0}
+  .ses div{grid-template-columns:1fr;gap:0}
+  .ses b{padding-top:0}
+  .quote{margin-top:72px;padding:60px 0}
+  .threads>div{padding:28px 24px 30px}
+  .threads>div+div{border-left:0;border-top:1.5px solid var(--ink)}
+  .turn.inset{margin-top:48px}
+  .turn.inset .wrap{padding:36px 24px 40px}
+  .pact div{grid-template-columns:1fr;gap:0}
+  .spec div{grid-template-columns:1fr;gap:2px}
+  .refs{columns:1}
+  .letter{padding:64px 0;margin-top:72px}
+  .letter .wrap{gap:36px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+@media print{
+  .top nav,.pill,.acts,form{display:none}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../" aria-label="Về hiên nhà của Phi Yên"><small>Về hiên nhà</small>Phi Yên</a>
+    <nav aria-label="Lối đi trong trang">
+      <a href="#vi-sao">Vì sao</a>
+      <a href="#chuong-trinh">Chương trình</a>
+      <a href="#thuc-hanh">Thực hành</a>
+      <a href="#thu">Viết cho Yên</a>
+      <button class="pill" id="mode" type="button" aria-label="Đổi nền sáng và nền tối">Nền tối</button>
+    </nav>
+  </header>
+</div>
+
+<section class="hero" id="mo-dau" role="img" aria-label="Một cái cây đứng trong đêm chàm dưới vầng trăng khuyết. Bộ rễ đi sâu xuống lòng đất, chạm tới một hang tối nơi có viên ngọc lục đang toả sáng.">
+  <div class="wrap">
+    <div class="in">
+      <p class="eyebrow">Hành trình khám phá và chuyển hoá tâm hồn</p>
+      <h1>Soul of <span>Life</span></h1>
+      <p class="sub">Bí ẩn nền tảng của tâm hồn soi từ một thời đại không ngừng biến đổi</p>
+      <p class="by">TS. BS. Vũ Phi Yên</p>
+      <blockquote class="epi">
+        <p>"No tree, it is said, can grow to heaven unless its roots reach down to hell."</p>
+        <cite>Carl Jung</cite>
+      </blockquote>
+      <div class="acts">
+        <a class="cta jade" href="#chuong-trinh">Chi tiết chương trình <span aria-hidden="true">↓</span></a>
+        <a class="textlink" href="#thu">Viết cho Yên ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wrap fx">
+  <dl class="facts">
+    <div><dt>Mùa gần nhất</dt><dd>Tháng 11/2026</dd></div>
+    <div><dt>Lần mở tới</dt><dd>Tháng 11/2027</dd></div>
+    <div><dt>Vòng tròn</dt><dd>Trên dưới mười người</dd></div>
+  </dl>
+</div>
+
+<section class="band" id="vi-sao">
+  <div class="wrap">
+    <div class="head rv"><h2>Vì sao: từ một bộ phim</h2><p class="eyebrow">Start with Why</p></div>
+    <div class="why">
+      <div class="prose rv">
+        <p class="lead">Một khán phòng tối om trong một tối đông giá buốt cuối tháng Một. Bộ phim tài liệu chiếu xong, cả phòng đứng lên vỗ tay thật lâu. Phim nói về chúng ta, về loài người, về những lỗi lầm kinh khủng mà ta đã mắc phải nhưng cũng nói cả về lối ra, về những giải pháp thực sự đang được thực hiện dần dần ở góc này, góc kia trên thế giới.</p>
+        <p>Bộ phim tên Demain (Ngày mai) của Cyril Dion đoạt giải Cesar award for Best Documentary. Tối hôm đó, tôi khóc vì mừng vui với những gì mình được thấy. Đó là đầu năm 2016.</p>
+        <p>Và rồi, tôi lại trở về Việt Nam. Với bao câu hỏi.</p>
+      </div>
+      <div class="qa rv">
+        <div>
+          <h3>Vì sao cần bàn về những <span class="hl">bí ẩn của tâm hồn</span>?</h3>
+          <p>Chương trình này là dành cho bạn, nếu bạn cũng nhìn quanh với thắc mắc lớn lao: Vì sao thế nhỉ? Vì sao chúng ta lại tiếp tục làm những hành động rõ ràng là làm khổ chính ta, và làm khổ lẫn nhau? Vì sao mãi vướng víu trong những bẫy cũ xưa, không cách nào vươn tới thêm một mức nữa như ta thiết tha mong muốn?</p>
+        </div>
+        <div>
+          <h3>Mục tiêu của BẠN là gì?</h3>
+          <p>Làm cách nào để tâm trí thay đổi? Thay đổi lớn lao. Đột phá. Tiến hoá. Thể loại tương lai đó cần được xây bởi những con người rất khác với những con người mà ta đang thấy quanh mình. Và nếu bạn nhìn sát hơn, nghĩ sâu hơn, có lẽ không chỉ cần những thay đổi về tâm trí. Có lẽ còn có những tâm hồn cần được đón nhận, cần được thấu hiểu, cần được đánh thức, cần được nuôi dưỡng.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="turn" id="noi-chuyen-sau-sac">
+  <div class="wrap">
+    <div class="rv">
+      <h2>Ở đây có món "nói chuyện sâu sắc"</h2>
+    </div>
+    <blockquote class="rv">
+      <p class="q">Tôi ớn đến tận cổ những câu chuyện xã giao vụn vặt, những chuyện "bà tám". Tôi thích trò chuyện về những nguyên tử, cái chết, tình dục, những điều huyền bí, trí tuệ, ý nghĩa cuộc đời, vì sao chúng ta lại ở đây, rồi ta sẽ về đâu, những thiên hà xa xôi, những dối trá vây quanh ta, những điểm yếu của bạn, những mùi hương để lại cho bạn ấn tượng đậm đà, thời thơ ấu của bạn, những điều làm bạn trăn trở hằng đêm, những hy vọng và ước mơ, những bất an và sợ hãi...</p>
+      <p class="q">Tôi thích những con người có bề sâu, mở miệng là dồi dào cảm xúc, cất lời từ những dòng tư duy kỳ quái, trắc trở. Tôi chẳng thích những cái vỗ vai "Sao rồi, khoẻ không?"</p>
+      <cite>The enchanted minds</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="band" id="giang-vien">
+  <div class="wrap">
+    <div class="guide">
+      <div class="rv">
+        <p class="eyebrow">Hội tụ công lực đa ngành để cùng chuyển "hòn đá lớn"</p>
+        <h2>Giới thiệu giảng viên</h2>
+        <div class="me"><img src="../assets/yen.webp" alt="Chân dung Vũ Phi Yên" width="92" height="92" loading="lazy"><p class="name">TS. BS. Vũ Phi Yên</p></div>
+      </div>
+      <div class="rv">
+        <div class="prose">
+          <p>Tôi đã là nhà trị liệu tâm lý lâm sàng từ 15 năm. Mười năm kể từ lần đầu khoá Soul of Life ra đời, tôi đã đi thêm một quãng đường dài.</p>
+          <p>Tôi trở thành <strong>nhà tương lai học</strong>, người nghiên cứu cách tâm trí và tâm hồn con người sẽ chuyển động trong thời đại của trí tuệ nhân tạo và những thay đổi đang tăng tốc.</p>
+          <p>Tôi đã <strong>viết và xuất bản sách về Mô hình Xoắn động (Spiral Dynamics)</strong>, "Gien tinh thần hay sự thật về tâm lý con người", và đang nghiên cứu để tạo nên <strong>một bài trắc nghiệm Xoắn động phù hợp với người Việt Nam</strong>, thay vì mượn nguyên các thang đo phương Tây.</p>
+          <p>Và tôi đã <strong>đồng hành cùng hơn 20 khoá Soul of Life</strong>. Mỗi khoá lại dạy tôi nhiều điều. Bản 2026 bạn đang cầm trên tay là kết tinh của tất cả những lần ấy: sâu hơn ở phần cội rễ, xa hơn ở phần tương lai.</p>
+          <p>Năm nay, buổi sáng Ngày 7 có một khách mời đặc biệt: <strong>Tôn Nữ Quỳnh Như</strong>.</p>
+        </div>
+        <div class="corner">
+          <b>Sâu hơn ở cội rễ, xa hơn ở tương lai</b>
+          Soul of Life 2026 giữ lại câu hỏi lớn của phiên bản đầu tiên 2016, đồng thời đi xa hơn vào thời đại AI, những chuyển động của căn tính, và cách con người học cách thử nghiệm đời mình với sự tò mò tỉnh táo.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="dem-lai">
+  <div class="wrap">
+    <div class="head rv"><h2>Soul of Life đem lại gì cho bạn</h2><p class="eyebrow">Hành trình chuyển hoá</p></div>
+    <div class="prose rv">
+      <p>Soul of Life là một bản đồ rộng và những góc kiến thức sâu để giúp bạn hiểu tâm hồn từ bên trong: từ di truyền, tuổi thơ, gắn bó, vô thức tập thể, cái bóng, tình yêu, trị liệu, ý nghĩa sống, đến tương lai của con người trong kỷ nguyên siêu trí tuệ.</p>
+      <p>Điều bạn mang về không chỉ có kiến thức, không phải là một hệ niềm tin mới để rồi dính chặt vào, mà là một thói quen quan sát sắc hơn: biết tự hỏi điều gì đang vận hành trong chính mình, thói quen luôn thử tạo những thay đổi nhỏ, rồi ghi nhận điều học được từ thực tế để ngày một hiệu quả và thông thái hơn. Đặc biệt, bạn sẽ biết trao cho tâm hồn mình một hình thức chăm sóc trưởng thành hơn.</p>
+    </div>
+    <div class="phases rv">
+      <div class="ph"><svg viewBox="0 0 46 46" aria-hidden="true"><path d="M6 10h34M23 10v8"/><path class="a" d="M23 18c0 10-9 9-12 22M23 18c0 10 9 9 12 22M23 18v24M23 26c-3 3-4 6-5 10M23 26c3 3 4 6 5 10"/></svg><div><b>Quá Khứ</b><small>Rễ</small></div></div>
+      <div class="ph"><svg viewBox="0 0 46 46" aria-hidden="true"><path d="M6 40h34"/><path class="a" d="M21 40c1-12 0-22-1-34M26 40c-1-12 0-22 1-34"/><path d="M23 30v-6M23 18v-4"/></svg><div><b>Hiện Tại</b><small>Thân</small></div></div>
+      <div class="ph"><svg viewBox="0 0 46 46" aria-hidden="true"><path d="M23 42V22"/><path class="a" d="M23 30c-9-2-13-9-13-18M23 30c9-2 13-9 13-18M23 22c-4-5-5-10-4-16M23 22c4-5 5-10 4-16M23 26c-5-3-8-7-9-12M23 26c5-3 8-7 9-12"/></svg><div><b>Tương Lai</b><small>Ngọn</small></div></div>
+    </div>
+    <blockquote class="said rv">
+      <p class="q">Hãy để rễ của bạn chạm đến địa ngục, thân cây phá vỡ những xiềng xích mà vươn lên đến chiều cao trưởng thành. Hãy mở hướng cho ngọn cây vươn tới thiên đàng. Vòng cung 8 ngày đồng hành của chúng ta đi qua cả ba giai đoạn ấy.</p>
+    </blockquote>
+  </div>
+</section>
+
+<section class="scene" id="chuong-trinh" role="img" aria-label="Một góc bàn trong đêm: hộp gỗ nhỏ đựng những lá bài, một lá bài vẽ cành hoa, cuốn sổ mở với cây bút, ngọn nến đang cháy và viên ngọc lục toả sáng, ngoài cửa sổ là trăng khuyết.">
+  <div class="wrap">
+    <div class="say rv">
+      <p class="eyebrow">Chi tiết chương trình</p>
+      <h2>8 ngày · 24 buổi</h2>
+      <p>Mỗi ngày gồm 2 bài học vào buổi sáng và 1 bài học vào buổi chiều. Phần cuối của buổi chiều dành cho thực hành: từ chất liệu của ngày, bạn chọn một lá bài trong bộ bài của khoá để làm ngay tối hôm ấy, rồi sáng hôm sau mang đến lớp một dòng ghi chép của chính mình.</p>
+      <p>Từ Ngày 5, mỗi buổi học để lại trong tay bạn một mảnh Lego của riêng mình. Chiều cuối cùng, bạn sẽ hiểu vì sao.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="part rv">
+    <svg viewBox="0 0 46 46" aria-hidden="true"><path d="M6 10h34M23 10v8"/><path class="a" d="M23 18c0 10-9 9-12 22M23 18c0 10 9 9 12 22M23 18v24M23 26c-3 3-4 6-5 10M23 26c3 3 4 6 5 10"/></svg>
+    <div><p class="eyebrow">Phần I</p><h3>Quá khứ · Rễ chạm địa ngục</h3></div>
+  </div>
+  <div class="day rv">
+    <div><p class="no">Ngày 1</p><h3>Một đứa con của loài người</h3></div>
+    <div class="ses">
+      <div><b>Buổi 1</b><span><span class="st">Trẻ em không phải tờ giấy trắng</span><span class="sd">Di truyền trong tâm lý học. Phần bẩm sinh của nhân cách.</span></span></div>
+      <div><b>Buổi 2</b><span><span class="st">Vô thức tập thể &amp; gien tinh thần</span><span class="sd">Carl Jung và sự di truyền của tâm hồn.</span></span></div>
+      <div><b>Buổi 3</b><span><span class="st">Thời thơ ấu ngủ quên</span><span class="sd">Ký ức trong bóng mờ. Những bước phát triển đầu tiên.</span></span></div>
+    </div>
+    <p class="take"><b>Thực hành của hôm nay</b><span>nhận ra khí chất mình thừa hưởng và đón nhận nó như một phần của chính mình.</span></p>
+  </div>
+  <div class="day rv">
+    <div><p class="no">Ngày 2</p><h3>Những năm phát triển sôi động và đầy tổn thương</h3></div>
+    <div class="ses">
+      <div><b>Buổi 4</b><span><span class="st">Sự gắn bó</span><span class="sd">Gắn bó là gì và quan trọng ra sao. Các kiểu gắn bó.</span></span></div>
+      <div><b>Buổi 5</b><span><span class="st">Tự truyện của mỗi người và những người kể chuyện</span><span class="sd">Ông thần Hạnh phúc và Những cây bonsai tức tưởi</span></span></div>
+      <div><b>Buổi 6</b><span><span class="st">Những cánh cửa mở về quá khứ</span><span class="sd">Giấc mơ, trò chơi và tranh vẽ. Thôi miên hồi quy. Tiền kiếp và luân hồi.</span></span></div>
+    </div>
+    <p class="take"><b>Thực hành của hôm nay</b><span>tiếp cận cảm giác an toàn, khoảng trống trong tim và những phản xạ gắn bó.</span></p>
+  </div>
+  <div class="day rv">
+    <div><p class="no">Ngày 3</p><h3>Bàn tay đưa nôi là bàn tay kiến tạo thế giới</h3></div>
+    <div class="ses">
+      <div><b>Buổi 7</b><span><span class="st">Đứa trẻ bên trong nói gì</span><span class="sd">Muôn mặt những đứa trẻ bên trong. Tương giao lý tưởng và không lý tưởng</span></span></div>
+      <div><b>Buổi 8</b><span><span class="st">Trái đắng: những rối loạn, sang chấn và những "bóng ma" ám ảnh</span><span class="sd">Những đứa trẻ bị phớt lờ, bỏ mặc.</span></span></div>
+      <div><b>Buổi 9</b><span><span class="st">Reparenting và Cha mẹ vừa đủ tốt</span><span class="sd">Câu trả lời cho quá khứ: xây một mái ấm.</span></span></div>
+    </div>
+    <p class="take"><b>Thực hành của hôm nay</b><span>tiếp cận sự tha thứ đích thực và tặng lòng trắc ẩn cho nơi cần nó nhất.</span></p>
+  </div>
+
+  <div class="part rv">
+    <svg viewBox="0 0 46 46" aria-hidden="true"><path d="M6 40h34"/><path class="a" d="M21 40c1-12 0-22-1-34M26 40c-1-12 0-22 1-34"/><path d="M23 30v-6M23 18v-4"/></svg>
+    <div><p class="eyebrow">Phần II</p><h3>Hiện tại · Thân cây trưởng thành</h3></div>
+  </div>
+  <div class="corner rv">
+    <b>Đọc trước để không chỉ gặp nhau học lý thuyết, mà chúng ta kịp bàn luận những câu chuyện sâu hơn, có tính ứng dụng cao hơn</b>
+    Sách "Mô hình Xoắn động" đã không còn có thể mua bản giấy. Chúng tôi tặng bạn bản ebook <a href="https://www.dropbox.com/scl/fi/x2rbtnkmxtszg0o3rw9er/MoHinhXoanDong-VuPhiYen.epub?rlkey=bc4vx82j696xg7vwev20fmp9c&amp;st=qz4t4aot&amp;dl=0" target="_blank" rel="noopener">ở link này</a>. Mời bạn đọc sách trước để nắm nền tảng; khi gặp nhau ta dành thời gian thảo luận, nâng cao và ứng dụng.
+  </div>
+  <div class="day rv">
+    <div><p class="no">Ngày 4</p><h3>Thế giới bên trong: đi xuống "hang tối" để tìm kho báu</h3></div>
+    <div class="ses">
+      <div><b>Buổi 10</b><span><span class="st">Ý thức, tiềm thức, vô thức thực sự chứa những gì?</span><span class="sd">Bản đồ Vô thức theo Freud, Jung, và Lockert. Trở thành người du hành lý tưởng.</span></span></div>
+      <div><b>Buổi 11</b><span><span class="st">Mô hình Xoắn động ứng dụng</span><span class="sd">Hiểu người và Hiểu mình trong tiến hoá.</span></span></div>
+      <div><b>Buổi 12</b><span><span class="st">Đường đến Cam rực rỡ &amp; Chiến binh Xanh yêu Trái đất</span><span class="sd">Trùm Cam tử tế và những cạm bẫy. Tâm lý học Niềm tin và Lừa đảo. Kích hoạt Cơn thức tỉnh Xanh; Từ "Bức xúc không làm ta vô can" đến "Thiện nguyện hiệu quả".</span></span></div>
+    </div>
+    <p class="take"><b>Chiều · Trải nghiệm</b><span>Khi cơ thể lên tiếng.</span><b>Thực hành của hôm nay</b><span>chậm nhịp lại, kết nối sâu với chính mình và chuẩn bị cho chuyển hóa đích thực nơi hang tối.</span></p>
+  </div>
+  <div class="day rv">
+    <div><p class="no">Ngày 5</p><h3>Cuộc chiến giữa Anh hùng và cái bóng, và chúng ta sống để yêu nhau</h3></div>
+    <div class="ses">
+      <div><b>Buổi 13</b><span><span class="st">Hành trình anh hùng &amp; Khuôn mẫu 12 bước</span><span class="sd">Tìm đúng sư phụ và bí kíp.</span></span></div>
+      <div><b>Buổi 14</b><span><span class="st">Cuộc chiến với Cái bóng &amp; Anh hùng phải chết</span><span class="sd">"The Red Book" và cẩm nang đi tìm cái bóng của chính mình.</span></span></div>
+      <div><b>Buổi 15</b><span><span class="st">Kiếm và hoa hồng</span><span class="sd">Bí ẩn tình yêu qua nội tiết học, tâm lý học thần kinh, gắn bó ở người trưởng thành, và Carl Jung. Tình yêu vô điều kiện có tồn tại?</span></span></div>
+    </div>
+    <p class="take"><b>Thực hành của hôm nay</b><span>chọn lá bài hợp với bạn nhất trong bộ bài của ngày, xoay quanh cái bóng, sự khiêm nhường và tình yêu.</span></p>
+  </div>
+  <div class="day rv">
+    <div><p class="no">Ngày 6</p><h3>Giả kim thuật của tâm hồn</h3></div>
+    <div class="ses">
+      <div><b>Buổi 16</b><span><span class="st">Đọc một con người: từ hang tối đến bản công thức</span><span class="sd">Những mẫu hình bền của nhân cách. Freud, Jung và Adler cùng soi một con người.</span></span></div>
+      <div><b>Buổi 17</b><span><span class="st">Giả kim thuật (1): tranh luận với ý nghĩ, hay để nó đi qua</span><span class="sd">"You feel the way you think". Chữa nỗi sợ nhện từ phương pháp xưa đến thực tế ảo. Giá trị thật của NLP.</span></span></div>
+      <div><b>Buổi 18</b><span><span class="st">Giả kim thuật (2): Nhân văn, thế mạnh &amp; Thí nghiệm nhỏ</span><span class="sd">Carl Rogers và tiếp cận Nhân văn. Trí thông minh cảm xúc. Tâm lý học tích cực. <strong>Tiny Experiments</strong> (Anne-Laure Le Cunff).</span></span></div>
+    </div>
+    <p class="take"><b>Thực hành của hôm nay</b><span>chọn lá bài hợp với bạn nhất trong bộ bài của ngày, xoay quanh thế mạnh của mình, sự bất toàn và sức mạnh nội tâm.</span></p>
+  </div>
+
+  <div class="part rv">
+    <svg viewBox="0 0 46 46" aria-hidden="true"><path d="M23 42V22"/><path class="a" d="M23 30c-9-2-13-9-13-18M23 30c9-2 13-9 13-18M23 22c-4-5-5-10-4-16M23 22c4-5 5-10 4-16M23 26c-5-3-8-7-9-12M23 26c5-3 8-7 9-12"/></svg>
+    <div><p class="eyebrow">Phần III</p><h3>Tương lai · Ngọn vươn tới thiên đàng</h3></div>
+  </div>
+  <div class="day rv">
+    <div><p class="no">Ngày 7</p><h3>Tôi là ai, và tôi sẽ là ai</h3></div>
+    <div class="ses">
+      <div><b>Buổi 19 và 20</b><span><span class="st">Những tấm gương cổ: horoscope, tử vi và tarot</span><span class="sd">Cùng khách mời Tôn Nữ Quỳnh Như.</span></span></div>
+      <div><b>Buổi 21</b><span><span class="st">Buổi chiều của đời người</span><span class="sd">Con người đi tìm Ý nghĩa: Viktor Frankl và Irvin Yalom. Một cuộc hẹn với chính mình khi tóc đã bạc.</span></span></div>
+    </div>
+    <p class="take"><b>Thực hành của hôm nay</b><span>chọn lá bài hợp với bạn nhất trong bộ bài của ngày, xoay quanh cảm giác mình đang ổn, sự buông và lòng biết ơn.</span></p>
+  </div>
+  <div class="day rv">
+    <div><p class="no">Ngày 8</p><h3>Con người trong kỷ nguyên siêu trí tuệ</h3></div>
+    <div class="ses">
+      <div><b>Buổi 22</b><span><span class="st">Homo Deus và những lời tiên tri tận thế</span><span class="sd">Tất định luận và quyền tự do lựa chọn. Tâm lý con người trong thời đại AI. <strong>The Singularity Is Nearer (Kurzweil)</strong> và <strong>Novacene (Lovelock)</strong>. Các phiên bản của hiện thực; những người đến từ tương lai.</span></span></div>
+      <div><b>Buổi 23</b><span><span class="st">Tái sắp bài: Reshuffle</span><span class="sd"><strong>Reshuffle (Sangeet Paul Choudary, 2025)</strong>: khi tất cả sụp đổ, đó là cơ hội xây lại từ đầu cho đúng. Vậy, thế nào là đúng? Thất bại thông minh với <strong>Right Kind of Wrong (Amy C. Edmondson)</strong>.</span></span></div>
+      <div><b>Buổi 24</b><span><span class="st">Lắp ghép: từ hộp Lego đến Core Gem</span><span class="sd">Dẫn lối từ tương lai đang được sinh ra. Mảnh nào bạn đã có, mảnh nào còn đang chờ bạn tìm?</span></span></div>
+    </div>
+    <p class="take"><b>Chiều · Nhận Core Gem</b><span>mang viên ngọc của mình bước vào hai ngày thiết kế sau khoá.</span><b>Thực hành của hôm nay</b><span>chọn lá bài hợp với bạn nhất trong bộ bài của ngày, xoay quanh giấc mơ lớn, việc trong tầm tay và khát vọng không bám víu.</span></p>
+  </div>
+</div>
+
+<section class="quote">
+  <blockquote class="wrap rv">
+    <p class="q">"Khi tôi năm tuổi gì đó, mẹ vẫn thường bảo tôi rằng hạnh phúc là chìa khoá quan trọng của cuộc đời.</p>
+    <p class="q">Rồi tôi đi học. Giáo viên có lần cho đề luận: 'Em muốn là gì khi lớn lên?'<br>Tôi viết rằng mình muốn trở thành người hạnh phúc. Bài ấy tôi bị cho là không hiểu đề.<br>Tôi thì đáp rằng thầy cô không hiểu cuộc đời thì đúng hơn."</p>
+    <cite>John Lennon</cite>
+  </blockquote>
+</section>
+
+<section class="band" id="thuc-hanh">
+  <div class="wrap">
+    <div class="head rv"><h2>Hai sợi chỉ thực hành</h2><p class="eyebrow">Lò luyện thực hành</p></div>
+    <p class="intro rv">Phần thực hành của khoá được dệt bằng hai sợi chỉ, mỗi sợi đi theo nhịp riêng của nó, để ngày nào bạn cũng biết rõ việc của mình là gì.</p>
+    <div class="threads rv">
+      <div>
+        <p class="when">Trong tám ngày học</p>
+        <h3>Một thực hành mỗi ngày</h3>
+        <p>Cuối mỗi ngày học, bạn gặp vài lá bài trong một bộ bài dành riêng cho khoá, lấy cảm hứng từ cuốn <em>Just One Thing</em> của Rick Hanson rồi đi sâu thêm. Bạn chọn lá đang gọi mình, làm trọn nó trong buổi tối, rồi ghi một dòng vào sổ thực địa. Bộ não đổi hình theo những gì ta lặp lại, nên sức mạnh của sợi chỉ này nằm ở việc nhỏ được làm trọn vẹn.</p>
+      </div>
+      <div>
+        <p class="when">Sau khoá học, cho tới Giao thừa</p>
+        <h3>Một thí nghiệm, một mùa</h3>
+        <p>Khi khoá học khép lại, bạn chọn một điều quan trọng vừa lộ ra và thiết kế cho nó một thí nghiệm thật, theo PACT của Anne-Laure Le Cunff (<em>Tiny Experiments</em>).</p>
+        <p>Cả lớp cùng lên đường ngày 2/12/2026 và cùng đi tới đêm Giao thừa. Suốt mùa ấy, có một cái cây nở hoa theo từng bước chân của bạn.</p>
+      </div>
+    </div>
+    <div class="corner rv">
+      <b>Vì sao một mùa</b>
+      Một mùa là khoảng thời gian đủ dài để một điều mới kịp bén rễ trong đời sống thật, và đủ gần để ta còn nhìn thấy đích. Mốc chung của cả lớp cho ta một điều quý: cùng một ngày, mọi người nói với nhau rằng hôm nay chúng ta đã đi hết, rồi cùng đọc lại điều mình đã thấy.
+    </div>
+    <div class="turn inset rv">
+      <div class="wrap">
+        <div>
+          <h3>Vòng lặp PACT cho thí nghiệm của mùa</h3>
+          <p class="q" style="margin-top:14px">"Để [mục đích], tôi sẽ [hành động] trong [thời hạn], và ghi lại điều tôi thấy."</p>
+        </div>
+        <dl class="pact">
+          <div><dt>Purposeful</dt><dd>Thí nghiệm để hướng đến hiểu được, làm được điều thật sự có ý nghĩa.</dd></div>
+          <div><dt>Actionable</dt><dd>Hành động đủ nhỏ để làm được trong đời sống thật.</dd></div>
+          <div><dt>Continuous</dt><dd>Có nhịp lặp lại để tâm trí kịp quen thuộc, và quan sát sự chuyển động.</dd></div>
+          <div><dt>Trackable</dt><dd>Có ghi lại, lưu dấu trên nhật ký của một nhà thám hiểm nội tâm.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="cach-hoc">
+  <div class="wrap">
+    <div class="head rv"><h2>Theo chương trình này như thế nào</h2><p class="eyebrow">Cách học</p></div>
+    <div class="prose rv">
+      <p>Trước mỗi ngày học, bạn bước vào với một thắc mắc đến từ cuộc sống. Sau mỗi ngày học, bạn ghi lại điều đã hiểu và mang về một thực hành nhỏ cho buổi tối, rồi ghi lại điều mình nhận thấy.</p>
+      <p>Nhịp TRƯỚC / SAU cho ta học theo cách tốt nhất đối với người học trưởng thành: chuẩn bị có quan sát, đi qua buổi học bằng sự hiện diện đầy chú tâm, rồi kiểm chứng bằng hành động nhỏ. Kiến thức được dùng để soi vào cảm xúc, cơ thể, quyết định, lựa chọn, thói quen, các mối quan hệ.</p>
+      <p>Sổ thực địa online của khoá giữ những dòng ghi chép của bạn suốt những ngày học và suốt mùa thí nghiệm sau đó, và mở sẵn các lá bài của từng tối, để khi Giao thừa đến, bạn có trong tay câu chuyện của chính mình để đọc lại.</p>
+    </div>
+    <blockquote class="said rv">
+      <p class="q">"Sự gặp gỡ giữa hai con người chẳng khác nào phản ứng xảy ra giữa hai chất hoá học.<br>Nếu có phản ứng xảy ra thì chắc chắn CẢ HAI đều biến đổi."</p>
+      <cite>Carl Gustav Jung</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="band" id="dang-ky">
+  <div class="wrap">
+    <div class="head rv"><h2>Mời bạn đến với Soul of Life mùa thu 2027</h2><p class="eyebrow">Đăng ký tham dự</p></div>
+    <dl class="spec rv">
+      <div><dt>Lần mở tới</dt><dd><b>Tháng 11/2027</b><a class="textlink" href="#thu">Viết cho Yên ↓</a></dd></div>
+      <div><dt>Ngày học mùa 2026</dt><dd><b>12 đến 15/11 &nbsp;và&nbsp; 26 đến 29/11/2026</b><small>ba ngày cho Quá khứ, ba ngày cho Hiện tại, và hai ngày cho Tương lai</small></dd></div>
+      <div><dt>Mùa thí nghiệm</dt><dd><b>2/12/2026 đến đêm Giao thừa 5/2/2027</b><small>những ngày thiết kế ngay sau khoá, rồi cả lớp cùng đi, mỗi người một thí nghiệm của riêng mình</small></dd></div>
+      <div><dt>Tổ chức</dt><dd>Soul of Life 2026 được tổ chức bởi <a href="https://www.facebook.com/LotusHouseTraining" target="_blank" rel="noopener">Lotus House Training</a>, dành cho một vòng tròn nhỏ, trên dưới mười người.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band" id="tai-lieu">
+  <div class="wrap">
+    <div class="head rv"><h2>Tài liệu tham khảo</h2><p class="eyebrow">Thư viện dẫn đường</p></div>
+    <p class="intro rv">Hominem unius libri timeo, tôi rất ngại người chỉ đọc một quyển sách. Dưới đây là những dòng chảy đã tiếp nước cho chương trình này được chảy dồi dào mạnh mẽ, để bạn có thể tự mình lần theo học hỏi thêm khi bạn muốn.</p>
+    <div class="refs">
+      <p>21 lessons for the 21th century. Yuval Noah Harari, 2018.</p>
+      <p>50 Psychology Classics. Tom Butler-Bowdon, 2007.</p>
+      <p>A Psychology of Human Strengths. Lisa G Aspinwall, 2003.</p>
+      <p>Altruism: The Power of Compassion to Change Yourself and the World. Matthieu Ricard, 2015.</p>
+      <p>Art as Therapy. Alain Botton, John Armstrong, 2016.</p>
+      <p>Behavioral Science. Barbara Fadem, 2014.</p>
+      <p>Buddha's Brain. Rick Hanson, 2014.</p>
+      <p>Cha mẹ vừa đủ tốt. Vũ Phi Yên, 2018.</p>
+      <p>Counseling and psychotherapy theories in context and practice. John Sommers-Flanagan, 2004.</p>
+      <p>Courage: The Joy of Living Dangerously. Osho, 2011.</p>
+      <p>Demain et après... un nouveau monde en marche, Cyril Dion, 2016.</p>
+      <p>Feeling Good: The New Mood Therapy. David Burns, 2000.</p>
+      <p>Fifty key thinkers in Psychology. Noel Sheehy, 2005.</p>
+      <p>Homo Deus: A Brief History of Tomorrow. Yuval Noah Harari, 2017.</p>
+      <p>How we die, Sherwin B. Nuland, 1993 (Hiểu về sự chết, NXB Thế giới, 2016).</p>
+      <p>Hypnose Humaniste - Voie de guérison et d'éveil. Olivier Lockert, 2015.</p>
+      <p>Hypnose. Olivier Lockert, 2013.</p>
+      <p>Jung's Map of the Soul: An Introduction, Murray Stein, 1998 (Bản đồ tâm hồn con người của Jung, NXB Tri thức, 2011).</p>
+      <p class="new">Just One Thing: Developing a Buddha Brain One Simple Practice at a Time. Rick Hanson, 2011.</p>
+      <p>Le phénomène humain, Pierre Teilhard de Chardin, 1955 (Hiện tượng con người, NXB Tri Thức, 2014).</p>
+      <p>Lessons in Love by Guy Corneau (Guy Corneau, 2004), from: N'y a-t-il pas d'amour heureux? (Guy Corneau, 1999).</p>
+      <p>Love, Freedom, Aloneness: The Koan of Relationships. Osho, 2002.</p>
+      <p>Man's Search For Meaning. Viktor E. Frankl, 1946.</p>
+      <p>Man's Search For Ultimate Meaning. Viktor E. Frankl, 2000.</p>
+      <p>Mô hình Xoắn động: Gien tinh thần hay sự thật về tâm lý con người. Vũ Phi Yên, NXB Trẻ, 2019.</p>
+      <p>Những con đường của ánh sáng. Trịnh Xuân Thuận, NXB Trẻ 2014 (Les voies de la lumière, Librairie Arthème Fayard, 2007).</p>
+      <p class="new">Novacene: The Coming Age of Hyperintelligence. James Lovelock, 2019.</p>
+      <p>Playing and Reality. D. W. Winnicott, 1971.</p>
+      <p class="new">Presencing. Otto Scharmer, 2026.</p>
+      <p>Psychology and Life. Richard Gerrig and Philip Zimbardo, 2002.</p>
+      <p>Quantum Consciousness: The Guide to Experiencing Quantum Psychology. Stephen Wolinsky, 1993.</p>
+      <p>Reality Is Broken: Why Games Make Us Better and How They Can Change the World, Jane McGonigal, 2011.</p>
+      <p>Reinventing Organization. Frederic Laloux, 2014 (Tái Tạo Tổ Chức: Phá Vỡ Rào Cản, Thổi Bùng Sinh Khí, NXB Thế Giới, 2018).</p>
+      <p class="new">Reshuffle: Who Wins When AI Restacks the Knowledge Economy. Sangeet Paul Choudary, 2025.</p>
+      <p>Ride of Your Life: A Coast-to-Coast Guide to Finding Inner Peace, Ran Zilca, 2016.</p>
+      <p class="new">Right Kind of Wrong: The Science of Failing Well. Amy C. Edmondson, 2023.</p>
+      <p>Sapiens: A Brief History of Humankind. Yuval Noah Harari, 2015.</p>
+      <p>Scientia Sacra. Bela Hamvas. (Minh triết thiêng liêng, NXB Tri thức, 2016).</p>
+      <p>Silence: In the Age of Noise, Erling Kagge, 2017 (Ta Dại Ta Tìm Nơi Vắng Vẻ, Nhà Xuất Bản Tổng hợp TP.HCM, 2019).</p>
+      <p>Spiral Dynamics: Mastering Values, Leadership and Change. Don Edward Beck, 2005.</p>
+      <p>Spiral Dynamics in Action: Humanity's Master Code. Don Edward Beck, 2018.</p>
+      <p>SuperBetter: The Power of Living Gamefully, Jane McGonigal, 2015.</p>
+      <p>Tất định luận và quyền tự do lựa chọn. Nguyễn Văn Trọng, 2015.</p>
+      <p>The Essentials of Theory U: Core Principles and Applications. Otto Scharmer, 2018.</p>
+      <p>The Evolving Self: Psychology for the Third Millennium. Mihaly Csikszentmihalyi, 2009.</p>
+      <p>The Hidden Reality. Brian Greene, 2011 (Vũ trụ song song, NXB Thời Đại 2012).</p>
+      <p>The Magic of Reality: How We Know What's Really True. Richard Dawkins, 2012.</p>
+      <p>The Non-Designer's Guide to Design Thinking. Saso Kunitake, 2017.</p>
+      <p>The Psychology of Leadership New Perspectives and Research. David M. Messick, 2005.</p>
+      <p>The Red Book. Carl G Jung, 2009.</p>
+      <p>The selfish gene. Richard Dawkins, 1989.</p>
+      <p class="new">The Singularity Is Nearer: When We Merge with AI. Ray Kurzweil, 2024.</p>
+      <p>The Universe in a Single Atom. Tenzin Gyatso, the 14th Dalai Lama, 2005 (Vũ Trụ Trong Một Nguyên Tử, Dalai Lama, Nhà Xuất Bản Văn Hoá Sài Gòn, 2018).</p>
+      <p>The World As I See It, Albert Einstein, 1993 (Thế giới như tôi thấy, NXB Tri Thức, 2005).</p>
+      <p>Theories of Psychotherapy and Counseling. Richard S. Sharf, 2012.</p>
+      <p>Theory U: Leading from the Future as It Emerges, Otto Scharmer, 2016.</p>
+      <p class="new">Tiny Experiments: How to Live Freely in a Goal-Obsessed World. Anne-Laure Le Cunff, 2025.</p>
+      <p>What makes you not a buddhist. Dzongsar Jamyang Khyentse, 2009.</p>
+      <p class="new">What to Do When You Feel Broken. Laura Williams, 2024.</p>
+      <p class="new">When Life Hits Hard: How to Transcend Grief, Crisis, and Loss with ACT. Russ Harris, 2021.</p>
+    </div>
+  </div>
+</section>
+
+<section class="letter" id="thu">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Viết cho Yên</p>
+      <h2>Bạn có cảm nhận khoá học này trả lời sự tò mò sâu thẳm trong bạn?</h2>
+      <p>Hãy đến với những câu hỏi thật từ đời mình, những tầng sâu tâm hồn chờ được gọi tên</p>
+      <p>và một thiện chí đủ mạnh để mở, để thấy, để hành động.</p>
+    </div>
+    <form id="form" class="rv" novalidate>
+      <label>Tên của bạn<input type="text" name="ten" autocomplete="name" maxlength="120"></label>
+      <label>Email để Yên hồi âm<input type="email" name="email" autocomplete="email" maxlength="160"></label>
+      <label>Lời nhắn<textarea name="loi" maxlength="4000"></textarea></label>
+      <input class="bay" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="send" id="gui" type="submit">Gửi thư ↗</button>
+      <p class="msg" id="msg" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="else">
+    <div class="links">
+      <a href="../">Về hiên nhà của Phi Yên</a>
+    </div>
+  </section>
+  <footer class="foot">Vũ Phi Yên &amp; Claude AI</footer>
+</div>
+
+<script>
+/* ===== Hộp thư chung của website =====
+   endpoint: Web App (Apps Script) gắn với Google Sheet "Website Vũ Phi Yên - Thư từ các phòng".
+   phong:    mã của trang này; thư sẽ vào đúng tab của nó trong sổ thư. */
+const HOP_THU = {
+  endpoint: "https://script.google.com/macros/s/AKfycbwmw1mWdW33-nmGemFBGkfoM0z1G2VDlizyeDOjgxU3JyTh-ZzErQlU-CtX5oJLaTlG/exec",
+  phong: "soul-of-life",
+  tenPhong: "Soul of Life"
+};
+const LOI = { thieu: "Bạn viết vài dòng rồi hãy gửi nhé.", dangGui: "Lá thư đang lên đường...", xong: "Thư của bạn đã tới nơi. Cảm ơn bạn thật nhiều.", loi: "Thư chưa gửi đi được. Bạn thử lại sau ít phút nhé." };
+
+(function(){
+  const root = document.documentElement;
+  root.classList.add("js");
+
+  /* Nền sáng là mặc định; người đọc tự chọn nền tối (dùng chung lựa chọn với hiên nhà) */
+  const mode = document.getElementById("mode");
+  function dat(toi){ root.setAttribute("data-mode", toi ? "dark" : "light"); mode.textContent = toi ? "Nền sáng" : "Nền tối"; }
+  try { if (localStorage.getItem("nen") === "toi") dat(true); } catch(e){}
+  mode.addEventListener("click", function(){
+    const toi = root.getAttribute("data-mode") !== "dark"; dat(toi);
+    try { localStorage.setItem("nen", toi ? "toi" : "sang"); } catch(e){}
+  });
+
+  /* Các khối hiện dần khi cuộn tới */
+  const rv = document.querySelectorAll(".rv");
+  if ("IntersectionObserver" in window){
+    const io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold: .08 });
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add("in"); }); }
+
+  /* Gửi thư về sổ thư */
+  const f = document.getElementById("form"), bao = document.getElementById("msg"), gui = document.getElementById("gui");
+  f.addEventListener("submit", async function(e){
+    e.preventDefault();
+    const d = new FormData(f);
+    if (d.get("website")) return;                       /* bẫy máy gửi thư rác */
+    const loi = (d.get("loi") || "").trim();
+    if (!loi){ bao.textContent = LOI.thieu; return; }
+    gui.disabled = true; bao.textContent = LOI.dangGui;
+    try {
+      const r = await fetch(HOP_THU.endpoint, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ phong: HOP_THU.phong, tenPhong: HOP_THU.tenPhong, ten: (d.get("ten")||"").trim(), email: (d.get("email")||"").trim(), loi: loi, ngu: "vi", trang: location.href }) });
+      const k = await r.json();
+      if (!k.ok) throw new Error(k.loi || "loi");
+      bao.textContent = LOI.xong; f.reset();
+    } catch(err){ bao.textContent = LOI.loi; }
+    gui.disabled = false;
+  });
+})();
+</script>
+</body>
+</html>
