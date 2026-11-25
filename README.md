@@ -9,6 +9,8 @@ vpy-creator.github.io/
 ├── index.html              Hiên nhà (trang chủ)
 ├── assets/                 ảnh và nhạc của hiên nhà
 │   ├── ban-tra.webp        ảnh bàn trà (nền cho tấm thiệp)
+│   ├── yen.webp            chân dung Yên ở đầu hiên nhà
+│   ├── sach/               bìa các cuốn sách Yên viết và dịch (phần Đọc cùng Yên)
 │   └── hien-nha.mp3        nhạc hiên nhà
 ├── phong-tuong-lai/        Phòng Tương lai
 │   ├── index.html
