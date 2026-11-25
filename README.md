@@ -56,3 +56,7 @@ git push
 ```
 
 GitHub Pages tự dựng lại trong khoảng một phút.
+
+## Google Analytics
+
+Mọi trang trên website đều gắn cùng một thẻ Google Analytics `G-NNE6620MNK`, đặt ngay sau dòng `<meta charset="utf-8">`. Khi mở phòng mới, có thể chép thẻ từ `index.html` của Hiên nhà; nếu quên, GitHub tự gắn hộ: mỗi lần đẩy lên `main`, workflow `.github/workflows/google-analytics.yml` chạy `tools/kiem-ga.sh --gan`, gắn thẻ vào trang nào còn thiếu rồi tự commit. Muốn tự kiểm trên máy, chạy `bash tools/kiem-ga.sh`.
