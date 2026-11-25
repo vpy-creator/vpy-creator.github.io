@@ -12,6 +12,9 @@ vpy-creator.github.io/
 │   ├── yen.webp            chân dung Yên ở đầu hiên nhà
 │   ├── sach/               bìa các cuốn sách Yên viết và dịch (phần Đọc cùng Yên)
 │   └── hien-nha.mp3        nhạc hiên nhà
+├── phong-khach/           Phòng khách (bảng khóa học, tủ sách, cửa sổ, cây quà tặng, hộp thư)
+│   ├── index.html
+│   └── assets/             tranh ban ngày và buổi tối, nhạc phòng khách
 ├── phong-tuong-lai/        Phòng Tương lai
 │   ├── index.html
 │   └── assets/
@@ -28,6 +31,7 @@ vpy-creator.github.io/
 Địa chỉ khi lên mạng:
 
 - Hiên nhà: `https://vpy-creator.github.io/`
+- Phòng khách: `https://vpy-creator.github.io/phong-khach/`
 - Phòng Tương lai: `https://vpy-creator.github.io/phong-tuong-lai/`
 - My Treasure Map: `https://vpy-creator.github.io/my-treasure-map/`
 - Soul of Life: `https://vpy-creator.github.io/soul-of-life/`
