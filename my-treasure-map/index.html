@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="vi" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Treasure Map · Tấm bản đồ cho việc lớn của đời bạn</title>
+<meta name="description" content="My Treasure Map là trạm khởi đầu cho người sắp lên đường thực hiện công trình của đời mình. Bốn ngày cùng Vũ Phi Yên ở Lâm Đồng, từ 11 đến 14/03/2027, để tự tay vẽ tấm bản đồ của riêng bạn.">
+<meta property="og:title" content="My Treasure Map · Tấm bản đồ cho việc lớn của đời bạn">
+<meta property="og:description" content="Bạn đã hiểu mình khá rõ. Giờ là lúc vẽ tấm bản đồ cho việc lớn của đời mình: đi về đâu, làm việc gì, cần những bản lĩnh nào và rèn ra sao.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://vpy-creator.github.io/my-treasure-map/assets/ban-do-tren-ban.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23674B73'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23D7A38E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Lora:ital,wght@1,400;1,500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== HỒN · Bản vẽ tím quả sung: giấy phấn nhạt, mực tím quả sung, một vệt hồng đào ===== */
+:root{--paper:#F5EFF4;--paper2:#EBE1EA;--ink:#33223B;--fig:#674B73;--soft:#6B5973;--hair:#D9CBD9;--grid:#ECE2EB;--accent:#D7A38E;--on-accent:#33223B;--block:#674B73;--on-block:#F5EFF4;--deep:#33223B}
+html[data-mode="dark"]{--paper:#1D1423;--paper2:#2A1D32;--ink:#F5EFF4;--fig:#C9B3D2;--soft:#B7A5BE;--hair:#40304A;--grid:#241929;--accent:#E0B09C;--on-accent:#1D1423;--block:#674B73;--on-block:#F5EFF4;--deep:#120C16}
+
+/* ===== KHUNG ===== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.85 'Be Vietnam Pro',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,dl,dd,dt,figure,blockquote{margin:0;padding:0}
+h1,h2,h3,.brand,.name{font-family:'Playfair Display',Georgia,serif;letter-spacing:.4px;font-feature-settings:"ss01" on}
+.wrap{max-width:1180px;margin:0 auto;padding:0 6vw}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--soft)}
+.eyebrow:before{content:'';display:inline-block;width:9px;height:9px;background:var(--accent);margin-right:10px}
+h2{font-size:clamp(28px,3.4vw,42px);font-weight:600;line-height:1.38}
+h3{font-size:22px;font-weight:600;line-height:1.45}
+section{scroll-margin-top:20px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.textlink{display:inline-block;padding:10px 0 6px;border-bottom:2px solid var(--accent);font-weight:600;text-decoration:none}
+.textlink:hover{border-bottom-color:currentColor}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:14px;padding-top:26px;border-top:3px solid var(--ink)}
+.lead{max-width:38em;color:var(--soft);margin-bottom:38px;font-size:17px}
+.band{padding:0 0 104px}
+.prose p{max-width:40em;font-size:17px}
+.prose p+p{margin-top:18px}
+.prose em,.q{font-family:'Lora',Georgia,serif;font-style:italic}
+.hl{background:linear-gradient(transparent 60%,var(--accent) 60%,var(--accent) 92%,transparent 92%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+html[data-mode="dark"] .hl{background:linear-gradient(transparent 84%,var(--accent) 84%,var(--accent) 96%,transparent 96%)}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+/* Đầu trang */
+.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0}
+.brand{font-size:28px;font-weight:700;text-decoration:none}
+.brand small{display:block;font:600 11px/1.4 'Be Vietnam Pro',sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
+.top nav{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:500}
+.top nav a{text-decoration:none;padding:10px 0}
+.top nav a:hover{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px;text-decoration-color:var(--accent)}
+.pill{min-height:44px;padding:8px 16px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;font:500 13px/1.4 'Be Vietnam Pro',sans-serif;cursor:pointer}
+.pill:hover{background:var(--ink);color:var(--paper)}
+
+/* Mở đầu */
+.hero{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 44px;border-top:3px solid var(--ink)}
+.hero .wrap{display:grid;grid-template-columns:1.04fr .96fr;gap:4%;align-items:center;padding-top:54px;padding-bottom:44px}
+.hero h1{font-size:clamp(30px,3.5vw,49px);font-weight:700;line-height:1.32;margin:22px 0 24px}
+.hero .intro{max-width:31em;color:var(--soft);font-size:17px}
+.acts{display:flex;align-items:center;flex-wrap:wrap;gap:14px 30px;margin-top:34px}
+.cta{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:14px 28px;background:var(--block);color:var(--on-block);font-weight:600;text-decoration:none;box-shadow:7px 7px 0 var(--accent);transition:transform .18s,box-shadow .18s}
+.cta:hover{box-shadow:2px 2px 0 var(--accent);transform:translate(5px,5px)}
+.cta span{color:var(--accent);font-size:19px}
+.cta.peach{background:var(--accent);color:var(--on-accent);box-shadow:7px 7px 0 var(--deep)}
+.cta.peach:hover{box-shadow:2px 2px 0 var(--deep)}
+.cta.peach span{color:inherit}
+.plancap{font:italic 400 15px/1.7 'Lora',Georgia,serif;color:var(--soft);text-align:center;margin-top:6px}
+
+/* Khung tên bản vẽ */
+.hero .wrap.fx{display:block;padding-top:0;padding-bottom:56px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--ink);background:var(--paper)}
+.facts div{padding:18px 24px;border-left:1.5px solid var(--ink)}
+.facts div:first-child{border-left:0}
+.facts dt{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
+.facts dd{font:600 20px/1.5 'Playfair Display',Georgia,serif;letter-spacing:.4px}
+
+/* Bản vẽ tấm bản đồ */
+.map{width:100%;height:auto;display:block;overflow:visible}
+.map *{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round}
+.map .sheet{fill:var(--paper);stroke-width:1.5}
+.map .far{stroke:var(--hair)}
+.map .con{stroke:var(--fig);stroke-width:1.1}
+.map .tree{stroke:var(--fig);stroke-width:1.1;fill:var(--paper2)}
+.map .route{stroke-width:2.2;stroke-dasharray:2 8}
+.map .gem{fill:var(--accent);stroke-width:1.3;transform-box:fill-box;transform-origin:center;animation:gem .7s cubic-bezier(.2,.7,.2,1) both}
+.map .g1{animation-delay:.5s}.map .g2{animation-delay:.7s}.map .g3{animation-delay:.9s}.map .g4{animation-delay:1.1s}.map .g5{animation-delay:1.3s}.map .g6{animation-delay:1.5s}.map .g7{animation-delay:1.7s}
+.map .here{fill:var(--ink);stroke:none}
+.map .pulse{stroke:var(--accent);stroke-width:2.2;transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-out infinite}
+.map .peak{fill:var(--accent);stroke:none;transform-box:fill-box;transform-origin:center;animation:rise 1.6s 1.6s cubic-bezier(.2,.7,.2,1) both}
+.map .ring{stroke:var(--accent);stroke-width:1.6}
+.map .lead-ln{stroke-width:1;stroke-dasharray:none}
+.map text{stroke:var(--paper);stroke-width:5px;paint-order:stroke;fill:var(--ink)}
+.map .nm{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:17px;letter-spacing:.4px}
+.map .it{font-family:'Lora',Georgia,serif;font-style:italic;font-size:14px;fill:var(--soft)}
+.map .cap{font-family:'Be Vietnam Pro',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:2px;fill:var(--soft)}
+@keyframes gem{from{transform:scale(0);opacity:0}to{transform:none;opacity:1}}
+@keyframes rise{from{transform:scale(.2);opacity:0}to{transform:none;opacity:1}}
+@keyframes pulse{0%{transform:scale(.7);opacity:1}100%{transform:scale(2.1);opacity:0}}
+
+/* Câu hỏi */
+.ask{padding-top:104px}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:38px 0 46px}
+.pat{padding:26px 28px 28px;border:1.5px solid var(--ink);background:var(--paper);transition:box-shadow .18s,transform .18s}
+.pat:hover{box-shadow:8px 8px 0 var(--accent);transform:translate(-4px,-4px)}
+.pat h3{margin-bottom:10px}
+.pat p{color:var(--soft);font-size:15.5px}
+.said{max-width:44em;padding:6px 0 6px 28px;border-left:5px solid var(--accent)}
+.said .q{font-size:clamp(21px,2.3vw,27px);line-height:1.6}
+.said small{display:block;margin-top:8px;color:var(--soft);font-size:14.5px}
+
+/* Khối tím quả sung */
+.turn{background:var(--block);color:var(--on-block);padding:92px 0}
+.turn .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:7%;align-items:center}
+.turn .eyebrow{color:var(--on-block);opacity:.8}
+.turn h2{margin-top:14px;font-size:clamp(27px,3.2vw,40px)}
+.turn p{opacity:.93;font-size:17px}
+.turn p+p{margin-top:18px}
+
+/* Tấm bản đồ */
+.mapsec{padding-top:104px}
+.qs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.qa{display:grid;grid-template-columns:54px 1fr;gap:20px;padding:28px 30px;border:1.5px solid var(--ink);background:var(--paper);transition:box-shadow .18s,transform .18s}
+.qa:hover{box-shadow:8px 8px 0 var(--accent);transform:translate(-4px,-4px)}
+.qa svg{width:54px;height:54px}
+.qa svg *{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.qa svg .a{fill:var(--accent)}
+.qa .ask-q{font:italic 400 16px/1.6 'Lora',Georgia,serif;color:var(--soft)}
+.qa h3{margin:2px 0 8px}
+.qa p{font-size:15.5px}
+.corner{margin-top:18px;padding:22px 30px;background:var(--paper2);font-size:15.5px}
+.honest{margin-top:46px;border:1.5px dashed var(--ink);padding:36px 42px}
+.honest h3{margin-bottom:10px}
+.honest p{max-width:46em;color:var(--soft);font-size:16.5px}
+
+/* Dải ảnh */
+.scene{position:relative;color:#F5EFF4;padding:110px 0 116px;background-color:#4D294C;background-repeat:no-repeat;background-position:0 0,right center;overflow:hidden}
+.scene .say{max-width:31em}
+.scene .eyebrow{color:#F5EFF4;opacity:.82}
+.scene h2{margin:14px 0 20px}
+.scene p{opacity:.94;font-size:17px}
+.scene.s1{background-image:linear-gradient(90deg,#4D294C 0%,#4D294C 28%,rgba(77,41,76,0) 54%),url(assets/ban-do-tren-ban.webp);background-size:auto,auto 116%}
+.scene.s2{background-image:linear-gradient(90deg,#4D294C 0%,#4D294C 28%,rgba(77,41,76,0) 54%),url(assets/ban-tron.webp);background-size:auto,auto 108%}
+
+/* Ba nhịp */
+.rhythm{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--ink);margin-top:-46px;position:relative;background:var(--paper)}
+.rhythm div{padding:30px 30px 34px;border-left:1.5px solid var(--ink)}
+.rhythm div:first-child{border-left:0}
+.rhythm .when{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
+.rhythm h3{margin:4px 0 12px}
+.rhythm p{font-size:15.5px}
+
+/* Bốn ngày */
+.day{display:grid;grid-template-columns:230px 1fr 290px;gap:34px;padding:34px 0;border-top:1px solid var(--hair)}
+.day:first-of-type{border-top:0;padding-top:46px}
+.day .no{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
+.day h3{font-size:26px;margin-top:4px}
+.slots{display:grid;gap:10px}
+.slots div{display:grid;grid-template-columns:62px 1fr;gap:14px;font-size:15.5px}
+.slots b{font-weight:600;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--soft);padding-top:3px}
+.take{align-self:start;padding:20px 22px;background:var(--paper2);border-left:5px solid var(--accent);font-size:15.5px}
+.take b{display:block;font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--soft);margin-bottom:4px}
+
+/* Sau bốn ngày */
+.after{padding-top:0}
+.row{display:grid;grid-template-columns:210px 1fr;gap:30px;align-items:baseline;padding:22px 0;border-top:1px solid var(--hair);transition:padding .2s,box-shadow .2s}
+.row:first-of-type{border-top:0}
+.row:hover{padding-left:14px;box-shadow:inset 5px 0 0 var(--accent)}
+.row .when{font:600 20px/1.5 'Playfair Display',Georgia,serif;letter-spacing:.4px}
+.row p{font-size:16.5px;max-width:40em}
+.note{margin-top:26px;color:var(--soft);max-width:42em}
+
+/* Người dẫn */
+.guide .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:8%}
+.guide .name{font-size:clamp(28px,3.4vw,42px);font-weight:600;line-height:1.38;margin-top:12px}
+.guide .role{color:var(--soft);margin-top:10px;max-width:22em}
+.guide a{text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px}
+
+/* Dành cho ai */
+.fit{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--ink)}
+.fit>div{padding:34px 38px 38px}
+.fit>div+div{border-left:1.5px solid var(--ink);background:var(--paper2)}
+.fit h3{margin-bottom:16px}
+.fit ul{list-style:none;display:grid;gap:14px}
+.fit li{position:relative;padding-left:26px;font-size:16px}
+.fit li:before{content:'';position:absolute;left:0;top:.72em;width:11px;height:11px;background:var(--accent)}
+.fit>div+div li:before{background:transparent;border:1.5px solid var(--ink)}
+.fit a{text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px}
+
+/* Thông tin */
+.info{display:grid;grid-template-columns:1.1fr .9fr;gap:5%;align-items:start}
+.spec{border-top:1.5px solid var(--ink)}
+.spec div{display:grid;grid-template-columns:130px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--hair)}
+.spec dt{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--soft);padding-top:5px}
+.spec dd{font-size:16.5px}
+.spec dd b{font:600 21px/1.5 'Playfair Display',Georgia,serif;letter-spacing:.4px}
+.spec a{text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px}
+.way{border:1.5px solid var(--ink);padding:34px 36px 38px;background:var(--paper)}
+.way h3{margin-bottom:16px}
+.way ol{list-style:none;counter-reset:buoc;display:grid;gap:16px;margin-bottom:28px}
+.way li{counter-increment:buoc;position:relative;padding-left:44px;font-size:16px}
+.way li:before{content:counter(buoc);position:absolute;left:0;top:1px;width:28px;height:28px;display:grid;place-items:center;border:1.5px solid var(--ink);font:600 14px/1 'Be Vietnam Pro',sans-serif}
+.way li a{text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px;font-weight:600}
+.way small{display:block;margin-top:18px;color:var(--soft);font-size:14px}
+.bound{margin-top:44px;color:var(--soft);font-size:14.5px;max-width:62em}
+
+/* Hỏi đáp */
+.faq{border-top:1.5px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--hair)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 0;font:600 20px/1.5 'Playfair Display',Georgia,serif;letter-spacing:.4px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';flex:none;width:34px;height:34px;display:grid;place-items:center;border:1.5px solid var(--ink);font:400 22px/1 'Be Vietnam Pro',sans-serif;transition:background .18s}
+.faq details[open] summary:after{content:'−';background:var(--accent);color:var(--on-accent)}
+.faq p{max-width:44em;padding:0 0 26px;font-size:16.5px}
+
+/* Lời cuối */
+.closing{background:var(--block);color:var(--on-block);padding:100px 0}
+.closing .wrap{max-width:900px}
+.closing .eyebrow{color:var(--on-block);opacity:.8}
+.closing h2{margin:14px 0 22px;font-size:clamp(28px,3.6vw,44px)}
+.closing p{opacity:.93;font-size:17px;max-width:38em}
+.ghost{display:inline-flex;align-items:center;min-height:54px;padding:14px 28px;border:1.5px solid var(--on-block);color:var(--on-block);font-weight:600;text-decoration:none;transition:background .18s,color .18s}
+.ghost:hover{background:var(--on-block);color:var(--block)}
+
+/* Chân trang */
+.else{padding:56px 0 30px}
+.else p{max-width:44em;color:var(--soft)}
+.else .links{display:flex;flex-wrap:wrap;gap:6px 34px;margin-top:10px;font-weight:500}
+.else .links a{padding:10px 0;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:6px}
+.foot{padding:22px 0 40px;border-top:1px solid var(--hair);color:var(--soft);font-size:13.5px}
+
+@media(max-width:900px){
+  .top{flex-wrap:wrap}
+  .top nav{gap:4px 16px;font-size:13.5px;flex-wrap:wrap}
+  .hero .wrap,.turn .wrap,.qs,.cards3,.guide .wrap,.fit,.info,.rhythm{grid-template-columns:1fr}
+  .hero .wrap{padding-top:38px;padding-bottom:36px;gap:26px}
+  .hero h1{font-size:clamp(27px,7.4vw,35px)}
+  .map .nm{font-size:21px}
+  .map .it{font-size:17.5px}
+  .map .cap{font-size:13px}
+  .hero .wrap.fx{padding-bottom:40px}
+  .facts{grid-template-columns:1fr}
+  .facts div{border-left:0;border-top:1.5px solid var(--ink);padding:14px 20px}
+  .facts div:first-child{border-top:0}
+  .ask,.mapsec{padding-top:72px}
+  .band{padding-bottom:72px}
+  .turn,.closing{padding:64px 0}
+  .turn .wrap{gap:22px}
+  .qa{grid-template-columns:44px 1fr;gap:16px;padding:24px 22px}
+  .qa svg{width:44px;height:44px}
+  .honest{padding:28px 24px}
+  .scene{padding:60px 0 310px;background-position:0 0,right bottom}
+  .scene.s1{background-image:linear-gradient(180deg,#4D294C 0%,#4D294C calc(100% - 300px),rgba(77,41,76,0) calc(100% - 210px)),url(assets/ban-do-tren-ban.webp);background-size:auto,auto 300px}
+  .scene.s2{background-image:linear-gradient(180deg,#4D294C 0%,#4D294C calc(100% - 300px),rgba(77,41,76,0) calc(100% - 210px)),url(assets/ban-tron.webp);background-size:auto,auto 300px}
+  .rhythm{margin-top:0;border-left:0;border-right:0;border-top:0}
+  .rhythm div{border-left:0;border-top:1px solid var(--hair);padding:26px 0}
+  .rhythm div:first-child{border-top:0}
+  .day{grid-template-columns:1fr;gap:16px;padding:30px 0}
+  .day:first-of-type{padding-top:34px}
+  .row{grid-template-columns:1fr;gap:2px}
+  .guide .wrap{gap:22px}
+  .fit>div{padding:28px 24px 30px}
+  .fit>div+div{border-left:0;border-top:1.5px solid var(--ink)}
+  .info{gap:34px}
+  .spec div{grid-template-columns:1fr;gap:2px}
+  .way{padding:28px 24px 32px}
+  .faq summary{font-size:18.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+@media print{
+  .top nav,.pill,.acts{display:none}
+  .js .rv{opacity:1;transform:none}
+  .faq details>p{display:block}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../" aria-label="Về hiên nhà của Phi Yên"><small>Về hiên nhà</small>Phi Yên</a>
+    <nav aria-label="Lối đi trong trang">
+      <a href="#ban-do">Tấm bản đồ</a>
+      <a href="#bon-ngay">Bốn ngày</a>
+      <a href="#thong-tin">Thông tin</a>
+      <a href="#hoi-dap">Hỏi đáp</a>
+      <button class="pill" id="am" type="button" hidden>Bật nhạc</button>
+      <button class="pill" id="mode" type="button" aria-label="Đổi nền sáng và nền tối">Nền tối</button>
+    </nav>
+  </header>
+</div>
+
+<section class="hero" id="mo-dau">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">My Treasure Map</p>
+      <h1>Bạn đã hiểu mình khá rõ. Giờ là lúc vẽ tấm bản đồ cho <span class="hl">việc lớn của đời mình</span>.</h1>
+      <p class="intro">My Treasure Map là trạm khởi đầu dành cho những người sắp lên đường thực hiện công trình của đời mình. Trong bốn ngày, bạn tự tay vẽ tấm bản đồ của riêng bạn, để biết rõ mình đi về đâu, bắt tay vào việc gì, cần những bản lĩnh nào và rèn những bản lĩnh ấy ra sao.</p>
+      <div class="acts">
+        <a class="cta" href="#ban-do">Xem tấm bản đồ có gì <span aria-hidden="true">↓</span></a>
+        <a class="textlink" href="https://my-treasure-map.vercel.app/viet-cho-yen/" target="_blank" rel="noopener">Viết cho chúng tôi ↗</a>
+      </div>
+    </div>
+    <div class="art">
+      <svg class="map" viewBox="0 0 560 540" role="img" aria-label="Bản vẽ một tấm bản đồ: từ dấu chấm bạn đang ở đây, một lối đi xuyên qua khu rừng, qua những bản lĩnh cần rèn, dẫn tới ngọn núi là việc lớn của đời bạn.">
+        <rect class="sheet" x="10" y="10" width="540" height="520"/>
+        <path d="M10 34H34V10M526 10V34H550M550 506H526V530M34 530V506H10"/>
+        <g transform="rotate(-12 150 152)"><ellipse class="far" cx="150" cy="152" rx="96" ry="62"/><ellipse class="far" cx="150" cy="152" rx="64" ry="41"/><ellipse class="far" cx="150" cy="152" rx="34" ry="21"/></g>
+        <g transform="rotate(14 468 338)"><ellipse class="far" cx="468" cy="338" rx="62" ry="44"/><ellipse class="far" cx="468" cy="338" rx="36" ry="24"/></g>
+        <g transform="rotate(-16 392 176)"><ellipse class="con" cx="392" cy="176" rx="152" ry="112"/><ellipse class="con" cx="392" cy="176" rx="122" ry="89"/><ellipse class="con" cx="392" cy="176" rx="92" ry="66"/><ellipse class="con" cx="392" cy="176" rx="62" ry="44"/></g>
+        <g class="trees">
+          <path class="tree" d="M118 348l-8 16h16zM118 364v7"/><path class="tree" d="M98 384l-8 16h16zM98 400v7"/><path class="tree" d="M206 300l-8 16h16zM206 316v7"/><path class="tree" d="M228 314l-8 16h16zM228 330v7"/>
+          <path class="tree" d="M212 392l-8 16h16zM212 408v7"/><path class="tree" d="M236 420l-8 16h16zM236 436v7"/><path class="tree" d="M340 346l-8 16h16zM340 362v7"/>
+          <path class="tree" d="M362 322l-8 16h16zM362 338v7"/><path class="tree" d="M332 276l-8 16h16zM332 292v7"/><path class="tree" d="M156 300l-8 16h16zM156 316v7"/><path class="tree" d="M344 414l-8 16h16zM344 430v7"/>
+        </g>
+        <path class="route" d="M92 452 C101.7 446.3 136.0 433.0 150 418 C164.0 403.0 160.0 372.3 176 362 C192.0 351.7 225.3 363.3 246 356 C266.7 348.7 295.0 333.7 300 318 C305.0 302.3 271.3 276.3 276 262 C280.7 247.7 312.0 240.0 328 232 C344.0 224.0 361.3 223.3 372 214 C382.7 204.7 388.7 182.3 392 176"/>
+        <path class="gem g1" d="M150 410 L157 418 L150 426 L143 418 Z"/><path class="gem g2" d="M176 354 L183 362 L176 370 L169 362 Z"/><path class="gem g3" d="M246 348 L253 356 L246 364 L239 356 Z"/><path class="gem g4" d="M300 310 L307 318 L300 326 L293 318 Z"/><path class="gem g5" d="M276 254 L283 262 L276 270 L269 262 Z"/><path class="gem g6" d="M328 224 L335 232 L328 240 L321 232 Z"/><path class="gem g7" d="M372 206 L379 214 L372 222 L365 214 Z"/>
+        <circle class="ring" cx="392" cy="176" r="25"/><circle class="peak" cx="392" cy="176" r="15"/>
+        <circle class="pulse" cx="92" cy="452" r="11"/><circle class="here" cx="92" cy="452" r="7"/>
+        <path class="lead-ln" d="M262 262H226"/><path class="lead-ln" d="M258 366l12 20"/>
+        <text class="nm" x="392" y="124" text-anchor="middle" font-family="'Playfair Display',Georgia,serif">Việc lớn của đời bạn</text>
+        <text class="it" x="220" y="267" text-anchor="end" font-family="'Lora',Georgia,serif">Bản lĩnh cần rèn</text>
+        <text class="it" x="262" y="404" font-family="'Lora',Georgia,serif">Lối đi</text>
+        <text class="nm" x="110" y="486" font-family="'Playfair Display',Georgia,serif">Bạn đang ở đây</text>
+        <text class="cap" x="30" y="46" font-family="'Be Vietnam Pro',sans-serif">TẤM BẢN ĐỒ CỦA RIÊNG BẠN</text>
+        <g transform="translate(504 488)"><circle r="20"/><path d="M0 -26V26M-26 0H26"/><path d="M0 -15L5 0H-5Z" style="fill:var(--accent)"/></g>
+      </svg>
+      <p class="plancap">Mỗi người vẽ một tấm bản đồ khác nhau, bằng chính bàn tay mình.</p>
+    </div>
+  </div>
+  <div class="wrap fx">
+    <dl class="facts">
+      <div><dt>Thời gian</dt><dd>11 đến 14/03/2027</dd></div>
+      <div><dt>Nơi chốn</dt><dd>Flowcation, Lâm Đồng</dd></div>
+      <div><dt>Nhóm</dt><dd>Tối đa tám người</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band ask" id="cau-hoi">
+  <div class="wrap">
+    <div class="head rv"><h2>Sau câu hỏi Tôi là ai</h2><p class="eyebrow">Bạn đang đứng ở đâu</p></div>
+    <div class="prose rv">
+      <p>Có những người đã đi một quãng đường rất dài để hiểu mình. Họ đã đọc, đã học, đã ngồi yên với những góc tối trong lòng, và đã trở ra với câu trả lời khá vững vàng cho câu hỏi <em>Tôi là ai</em>. Otto Scharmer, người viết Theory U, nói rằng ngay sau câu hỏi ấy có một câu hỏi khác đứng chờ: <em>việc lớn của đời tôi là gì?</em></p>
+      <p>Nếu câu hỏi ấy đã cất tiếng trong bạn, có lẽ bạn cũng nhận ra mình trong những cảnh quen thuộc dưới đây.</p>
+    </div>
+    <div class="cards3 rv">
+      <div class="pat"><h3>Học thêm một khoá nữa</h3><p>Mỗi khoá học, mỗi cuốn sách, mỗi chuyến retreat giúp bạn hiểu mình sâu thêm và thấy yên lòng. Rồi một hôm bạn tự hỏi: mình học nhiều thế rồi, sao vẫn chưa bắt đầu?</p></div>
+      <div class="pat"><h3>Giữ mọi cánh cửa cùng mở</h3><p>Người đã hiểu mình thường hợp với nhiều hướng đi, và hướng nào cũng có vẻ đẹp riêng. Bạn chưa nỡ buông hướng nào, nên sức lực chia đều cho tất cả và chưa hướng nào đi được xa.</p></div>
+      <div class="pat"><h3>Bản tuyên ngôn trong ngăn kéo</h3><p>Bạn đã viết được những dòng rất đẹp về sứ mệnh của mình trong một đêm đầy cảm hứng. Sáng thứ Hai, lịch sống quen thuộc trở lại, và bước kế tiếp vẫn chưa có tên.</p></div>
+    </div>
+    <blockquote class="said rv">
+      <p class="q">“Tôi đi vòng vòng, khám phá rất nhiều, nhưng chưa quyết được hướng đi rõ ràng.”</p>
+      <small>Lời một người từng ngồi trước mặt tôi, và có lẽ cũng là lời bạn từng tự nói với mình.</small>
+    </blockquote>
+  </div>
+</section>
+
+<section class="turn" id="lua-chon">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Điều đang chờ bạn</p>
+      <h2>Hiểu mình là câu trả lời cho Tôi là ai. Việc lớn của đời mình cần thêm một chuyển động khác hẳn: lựa chọn.</h2>
+    </div>
+    <div class="rv">
+      <p>Những vòng đi ấy đều có ích, vì chính chúng đã làm nên một con người đủ chín chắn để đứng ở đây hôm nay. Chặng kế tiếp bắt đầu khi bạn chọn lấy một hướng, tiễn những hướng còn lại cho tử tế, rồi nhìn rõ con đường từ chỗ mình đang đứng tới nơi mình muốn đến.</p>
+      <p>Trong những năm ngồi phòng tham vấn, tôi thấy người ta tự đi tiếp được khi đã làm trọn những việc ấy. My Treasure Map dành riêng bốn ngày để bạn làm điều đó, cùng nhóm nhỏ và người dẫn đường của mình.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band mapsec" id="ban-do">
+  <div class="wrap">
+    <div class="head rv"><h2>Tấm bản đồ bạn mang về</h2><p class="eyebrow">Điều bạn cầm trên tay chiều ngày cuối</p></div>
+    <p class="lead rv">Chiều ngày cuối, bạn mở tấm bản đồ do chính tay mình vẽ, trên giấy và trong bản điện tử. Trên đó có lời đáp cho những câu hỏi mà một người sắp lên đường cần biết.</p>
+    <div class="qs rv">
+      <div class="qa">
+        <svg viewBox="0 0 54 54" aria-hidden="true"><path d="M6 46L22 18l8 12 6-8 12 24z"/><circle class="a" cx="22" cy="12" r="5"/></svg>
+        <div><p class="ask-q">Tôi đi về đâu?</p><h3>Hướng đóng góp của bạn</h3><p>Viết bằng lời của chính bạn: việc gì, cho ai, và vì sao hướng ấy xứng đáng với phần đời sắp tới.</p></div>
+      </div>
+      <div class="qa">
+        <svg viewBox="0 0 54 54" aria-hidden="true"><path d="M8 44c10-2 6-14 16-16s8-12 20-16" stroke-dasharray="2 6"/><circle cx="8" cy="44" r="4"/><circle class="a" cx="44" cy="12" r="5"/></svg>
+        <div><p class="ask-q">Tôi làm gì trước, làm gì sau?</p><h3>Lối đi</h3><p>Con đường từ nơi bạn đang đứng tới mục tiêu gần, cùng lý do khiến các chặng nối vào nhau.</p></div>
+      </div>
+      <div class="qa">
+        <svg viewBox="0 0 54 54" aria-hidden="true"><path class="a" d="M27 6l12 14-12 28L15 20z"/><path d="M15 20h24M27 6v42"/></svg>
+        <div><p class="ask-q">Tôi cần những bản lĩnh nào?</p><h3>Những bản lĩnh cần rèn</h3><p>Bảy năng lực nội tâm cần cho đúng con đường của bạn, chọn từ bộ <a href="https://www.phiyenvu.com/idg-25" target="_blank" rel="noopener">Inner Development Goals</a> theo tầng tâm thức hiện tại của bạn. Tầng tâm thức được đo bằng thước đo theo Mô hình Xoắn động, một công cụ đang trong quá trình công bố khoa học.</p></div>
+      </div>
+      <div class="qa">
+        <svg viewBox="0 0 54 54" aria-hidden="true"><rect x="8" y="12" width="38" height="34"/><path d="M8 22h38M18 6v10M36 6v10"/><rect class="a" x="16" y="29" width="9" height="9"/></svg>
+        <div><p class="ask-q">Tôi rèn những bản lĩnh ấy ra sao?</p><h3>Bước đầu tiên, có ngày trên lịch</h3><p>Mỗi bản lĩnh được hạ xuống thành hành vi làm được và quan sát được trong đời sống thật. Bước đầu tiên đã có ngày trên lịch, kèm dấu hiệu tiến bộ và ngày bạn tự xem lại.</p></div>
+      </div>
+    </div>
+    <p class="corner rv">Ở góc bản đồ còn có những hình ảnh của riêng bạn, hiện ra trong các buổi tối làm việc sâu. Chỉ mình bạn hiểu chúng, và cũng vì thế mà tấm bản đồ thuộc về bạn.</p>
+    <div class="honest rv">
+      <h3>Điều tấm bản đồ làm được, và điều đến sau</h3>
+      <p>Bốn ngày này dành trọn cho tấm bản đồ. Những bản lĩnh ghi trên bản đồ được rèn dần trong đời sống thật, thường qua một hai năm kiên trì. Tôi nói điều này ngay từ đầu vì bạn xứng đáng được biết sự thật về con đường. Người lên đường thiếu bản đồ thường học theo may rủi, gặp gì học nấy, để rồi nhiều mùa sau nhận ra mình đã rèn rất nhiều điều dành cho con đường của người khác.</p>
+    </div>
+  </div>
+</section>
+
+<section class="scene s1" id="cach-lam">
+  <div class="wrap">
+    <div class="say rv">
+      <p class="eyebrow">Cách làm</p>
+      <h2>Tấm bản đồ được vẽ bằng cả lý trí lẫn tầng sâu của bạn.</h2>
+      <p>Tấm bản đồ được vẽ từ một chỗ sâu hơn cái đầu lập kế hoạch thì khó bị chính cái đầu ấy xé đi khi bạn trở về đời thường. Phần năng lượng xưa nay tiêu vào việc giằng co giữa các lựa chọn được trả về cho con đường của bạn. Vì thế mỗi ngày ở đây có ba nhịp làm việc nối nhau.</p>
+    </div>
+  </div>
+</section>
+<div class="band"><div class="wrap">
+  <div class="rhythm rv">
+    <div><p class="when">Ban ngày</p><h3>Tầng bản đồ</h3><p>Buổi sáng cả nhóm ngồi cùng nhau, kết nối và mở những trang lý thuyết cần thiết. Buổi chiều mỗi người làm việc riêng với Sổ thực địa của mình giữa thiên nhiên, có người hướng dẫn ngồi kế bên khi bạn cần. Phần này giúp tấm bản đồ khớp với thực địa: bối cảnh Việt Nam, điều kiện sống thật và quỹ thời gian thật của bạn.</p></div>
+    <div><p class="when">Buổi tối</p><h3>Tầng giếng sâu</h3><p>Khi ngày đã lắng xuống, tôi trực tiếp dẫn cả nhóm làm việc với hình ảnh nội tâm, trí tưởng tượng chủ động và những nghi thức nhỏ. Bạn luôn tỉnh táo và luôn là người cầm bút, còn tôi gìn giữ một không gian đủ sâu và đủ an toàn để những hình ảnh của riêng bạn hiện ra. Phần này đem lại sự chuyển hoá bền vững và nguồn động lực dài lâu cho con đường bạn chọn.</p></div>
+    <div><p class="when">Trong đêm</p><h3>Trí tuệ của đêm</h3><p>Trước khi ngủ, bạn được hướng dẫn gửi một câu hỏi vào giấc mơ. Sáng ra bạn ghi lại điều đêm đã trả lời, và chất liệu ấy được đọc kỹ trước buổi học, để trí tuệ của đêm chảy vào tấm bản đồ ban ngày.</p></div>
+  </div>
+</div></div>
+
+<section class="scene s2" id="bon-ngay">
+  <div class="wrap">
+    <div class="say rv">
+      <p class="eyebrow">Lịch trình</p>
+      <h2>Bốn ngày quanh chiếc bàn tròn.</h2>
+      <p>Tấm bản đồ được vẽ trong một nhóm nhỏ ngồi vừa quanh chiếc bàn tròn ở Flowcation, giữa đồi núi Lâm Đồng. Mỗi ngày đi trọn một chặng và trao cho bạn một phần của tấm bản đồ.</p>
+    </div>
+  </div>
+</section>
+<div class="band"><div class="wrap">
+  <div class="day rv">
+    <div><p class="no">Ngày thứ nhất</p><h3>Điểm xuất phát</h3></div>
+    <div class="slots">
+      <div><b>Sáng</b><span>Cả nhóm làm quen qua những câu chuyện: tôi là ai, và vì sao tôi có mặt ở đây.</span></div>
+      <div><b>Chiều</b><span>Nhìn lại nguồn lực, những việc đã thử và những mảnh ghép quan trọng nhất của đời mình.</span></div>
+      <div><b>Tối</b><span>Gặp lại con người đích thực của mình trong một bức chân dung khó quên.</span></div>
+      <div><b>Đêm</b><span>Câu hỏi gửi vào giấc mơ: việc lớn của đời tôi là gì?</span></div>
+    </div>
+    <p class="take"><b>Bạn mang về</b>Dấu chấm “bạn đang ở đây” được vẽ kỹ, cùng câu hỏi dẫn đường viết bằng lời của chính bạn.</p>
+  </div>
+  <div class="day rv">
+    <div><p class="no">Ngày thứ hai</p><h3>Hướng đóng góp</h3></div>
+    <div class="slots">
+      <div><b>Sáng</b><span>Lắng nghe tiếng gọi vẫn theo bạn bấy lâu và nhận ra cuộc hẹn lớn của đời mình, cùng lòng can đảm để buông những hướng còn lại.</span></div>
+      <div><b>Chiều</b><span>Tìm những người thầy và những phương pháp có thật cho hướng bạn chọn.</span></div>
+      <div><b>Tối</b><span>Ghé thăm tương lai, nơi bạn đang sống với hướng ấy mỗi ngày.</span></div>
+      <div><b>Đêm</b><span>Câu hỏi gửi vào giấc mơ: con đường nào dành cho tôi?</span></div>
+    </div>
+    <p class="take"><b>Bạn mang về</b>Hướng đóng góp của riêng bạn, ghi rõ việc gì, cho ai và vì sao.</p>
+  </div>
+  <div class="day rv">
+    <div><p class="no">Ngày thứ ba</p><h3>Lối đi và bản lĩnh</h3></div>
+    <div class="slots">
+      <div><b>Sáng</b><span>Làm quen với tấm bản đồ chung của Inner Development Goals, và học cách đối diện điều vẫn khiến ta chùn bước trước mỗi năng lực mới.</span></div>
+      <div><b>Chiều</b><span>Vẽ lối đi của riêng bạn và chọn những bản lĩnh cần rèn.</span></div>
+      <div><b>Tối</b><span>Tháo gỡ rào cản cuối cùng, thứ có thể khiến tấm bản đồ nằm yên trong ngăn kéo.</span></div>
+      <div><b>Đêm</b><span>Câu hỏi gửi vào giấc mơ: dấu hiệu nào cho tôi lên đường?</span></div>
+    </div>
+    <p class="take"><b>Bạn mang về</b>Bản đồ nháp với hướng đi, lối đi và những bản lĩnh cần rèn.</p>
+  </div>
+  <div class="day rv">
+    <div><p class="no">Ngày thứ tư</p><h3>Bước đầu tiên</h3></div>
+    <div class="slots">
+      <div><b>Sáng</b><span>Nối điều đêm trao với việc ngày làm, nối phần riêng của bạn với cả nhóm, rồi hoàn thành tấm bản đồ và soạn hành trang.</span></div>
+      <div><b>Chiều</b><span>Lập kế hoạch tiến lên luôn có người hỗ trợ, để đường xa có bạn.</span></div>
+      <div><b>Tối</b><span>Gom năng lượng nội tâm về một mối cho hành trình dài và bền bỉ.</span></div>
+      <div><b>Đêm</b><span>Lời chào để cả nhóm còn gắn kết với nhau trên đường dài.</span></div>
+    </div>
+    <p class="take"><b>Bạn mang về</b>Tấm bản đồ hoàn chỉnh và bước đầu tiên đã có ngày trên lịch.</p>
+  </div>
+</div></div>
+
+<section class="band after" id="duong-dai">
+  <div class="wrap">
+    <div class="head rv"><h2>Lên đường, bạn có bạn đường</h2><p class="eyebrow">Sau bốn ngày</p></div>
+    <p class="lead rv">Tấm bản đồ sinh ra để được mang theo trên đường, và bạn có người đi cùng ở những chặng đầu.</p>
+    <div class="rv">
+      <div class="row"><div class="when">Tuần kế tiếp</div><p>Bản điện tử của tấm bản đồ cùng hướng dẫn dùng lại được gửi tới bạn.</p></div>
+      <div class="row"><div class="when">Tháng đầu tiên</div><p>Bạn có một hộp thư để hỏi tôi theo nhịp mỗi tuần.</p></div>
+      <div class="row"><div class="when">Năm sau đó</div><p>Bạn có quyền ưu tiên trong cộng đồng Level-Up, nơi có các nhóm cùng nhau rèn từng năng lực nội tâm do tôi trực tiếp dẫn, để bản lĩnh đầu tiên trên bản đồ của bạn có một địa chỉ.</p></div>
+    </div>
+    <p class="note rv">EarthWise VN đang chuẩn bị những hành trình kế tiếp cho các chặng sâu hơn. Mỗi hành trình sẽ có lời mời riêng, và bạn là người quyết định mình đi tiếp lúc nào, cùng ai.</p>
+  </div>
+</section>
+
+<section class="band guide" id="nguoi-dan">
+  <div class="wrap">
+    <div class="rv" style="padding-top:26px;border-top:3px solid var(--ink)">
+      <p class="eyebrow">Người ngồi cùng bạn</p>
+      <p class="name">Vũ Phi Yên</p>
+      <p class="role">Nhà tâm lý lâm sàng và nhà tương lai học.</p>
+    </div>
+    <div class="prose rv" style="padding-top:26px;border-top:3px solid var(--ink)">
+      <p>Tôi là tác giả cuốn <a href="https://mohinhxoandong.vn" target="_blank" rel="noopener">Mô hình Xoắn động</a> và người dịch bộ sách Những người tạo ra hiện thực. Mười năm nay, tôi dẫn <a href="https://www.phiyenvu.com/soul-of-life-2026" target="_blank" rel="noopener">Soul of Life</a>, hành trình giúp người ta trả lời câu hỏi Tôi là ai. Tôi đã thấy nhiều người học viết được những tuyên ngôn sứ mệnh thật đẹp rồi dừng lại ở bước kế tiếp, và My Treasure Map sinh ra cho chính quãng ấy.</p>
+      <p>Tôi cũng vừa dùng chính những công cụ này để vẽ tấm bản đồ cho mình, khi cùng EarthWise VN mở ra một chặng đường mới. Vì thế tôi ngồi cùng bạn với tư cách một người đi trước một quãng, tay cầm đèn, và vẫn còn nguyên niềm háo hức của người đang đi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="danh-cho-ai">
+  <div class="wrap">
+    <div class="head rv"><h2>Hành trình này dành cho ai</h2><p class="eyebrow">Để bạn tự đối chiếu</p></div>
+    <div class="fit rv" style="margin-top:30px">
+      <div>
+        <h3>Hợp với bạn, nếu</h3>
+        <ul>
+          <li>Bạn là cựu học viên Soul of Life, hoặc đã có nền tự quan sát tương đương qua thiền tập, khai vấn, trị liệu hay Theory U.</li>
+          <li>Câu hỏi “việc lớn của đời tôi là gì” đang gõ cửa, và bạn nhận ra mình trong những cảnh quen thuộc ở đầu trang.</li>
+          <li>Bạn tự quyết được thời gian và tài chính của mình, và thu xếp được bốn ngày liền.</li>
+          <li>Bạn sẵn lòng để hình ảnh, giấc mơ và những câu chuyện làm việc cùng lý trí.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hẹn bạn một dịp khác, nếu</h3>
+        <ul>
+          <li>Bạn còn đang ở chặng đi tìm “tôi là ai”. <a href="https://www.phiyenvu.com/soul-of-life-2026" target="_blank" rel="noopener">Soul of Life</a> là nơi dành cho chặng ấy.</li>
+          <li>Bạn đang đi qua một cơn khủng hoảng cần sự nâng đỡ chuyên môn riêng. Hãy <a href="https://my-treasure-map.vercel.app/viet-cho-yen/" target="_blank" rel="noopener">viết cho tôi</a> vài dòng, tôi sẽ giới thiệu bạn tới nơi phù hợp.</li>
+          <li>Bạn đang tìm một lối tắt, hay một lời bảo đảm về nghề nghiệp và thu nhập.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="thong-tin">
+  <div class="wrap">
+    <div class="head rv"><h2>Những điều rõ ràng trước khi bạn quyết định</h2><p class="eyebrow">Thông tin hành trình</p></div>
+    <div class="info rv" style="margin-top:30px">
+      <dl class="spec">
+        <div><dt>Hình thức</dt><dd>Retreat nhóm nhỏ, mọi người ở lại cùng nhau trọn bốn ngày.</dd></div>
+        <div><dt>Quy mô</dt><dd>Tối đa tám người, đúng sức chứa của Flowcation, để ai cũng được lắng nghe trọn vẹn.</dd></div>
+        <div><dt>Thời điểm</dt><dd>Từ ngày 11 đến ngày 14/03/2027.</dd></div>
+        <div><dt>Địa điểm</dt><dd>Nếu nhóm được thành lập sớm, hành trình sẽ diễn ra ở Flowcation: Khu Đồi Dựng, đường tổ 23, thôn Hiệp Thuận, Ninh Gia, Đức Trọng, Lâm Đồng. <a href="https://www.google.com/maps?q=Flowcation,+Khu+%C4%90%E1%BB%93i+D%E1%BB%B1ng,+%C4%91%C6%B0%E1%BB%9Dng+t%E1%BB%95+23,+th%C3%B4n+Hi%E1%BB%87p+Thu%E1%BA%ADn,+Ninh+Gia,+L%C3%A2m+%C4%90%E1%BB%93ng" target="_blank" rel="noopener">Xem đường tới Flowcation</a></dd></div>
+        <div><dt>Học phí</dt><dd><b>30.000.000 đồng</b><br>Cho trọn hành trình, đã gồm học liệu, và ăn uống sinh hoạt tại Flowcation. Phần đi lại bạn tự thu xếp.</dd></div>
+      </dl>
+      <div class="way">
+        <h3>Đường vào</h3>
+        <ol>
+          <li>Đặt dấu chấm đầu tiên bằng <a href="https://my-treasure-map.vercel.app/dau-cham-dau-tien/" target="_blank" rel="noopener">món quà bên bìa rừng</a>, một bài tự soi ngắn cho bạn thấy mình đang đứng ở đâu.</li>
+          <li>Nếu còn điều gì muốn hỏi về hành trình, bạn <a href="https://my-treasure-map.vercel.app/viet-cho-yen/" target="_blank" rel="noopener">viết cho team tổ chức</a>. Chúng tôi hồi âm bằng email trong vòng hai ngày, kèm đầy đủ thông tin chi tiết về chương trình.</li>
+          <li>Khi bạn chắc chắn hành trình này phù hợp với mình, bạn nhấn Đăng ký.</li>
+        </ol>
+        <a class="cta" href="https://gateway.solo2os.com/pay/cudjg2xt" target="_blank" rel="noopener">Đăng ký <span aria-hidden="true">↗</span></a>
+        <small>Trang thanh toán mở trong một thẻ mới.</small>
+      </div>
+    </div>
+    <p class="bound rv">My Treasure Map là chương trình giáo dục và phát triển cá nhân, do một nhà tâm lý lâm sàng thiết kế và dẫn dắt. Bạn là người tự chọn hướng đi của mình. Chẩn đoán, trị liệu và can thiệp khẩn cấp về sức khoẻ tâm thần nằm ngoài phạm vi của chương trình. Mọi điều được chia sẻ trong nhóm đều được giữ kín, và lời của bạn chỉ được trích khi bạn đồng ý. Chương trình trao cho bạn một tấm bản đồ và một người đồng hành, còn con đường cùng những gì nở ra trên đó thuộc về bước chân của bạn.</p>
+  </div>
+</section>
+
+<section class="band" id="hoi-dap">
+  <div class="wrap">
+    <div class="head rv" style="border-top:0;padding-top:0"><h2>Vài điều bạn còn muốn hỏi</h2><p class="eyebrow">Hỏi đáp</p></div>
+    <div class="faq rv" style="margin-top:26px">
+      <details><summary>Sau bốn ngày, tôi đã có trong tay những bản lĩnh ấy chưa?</summary><p>Bốn ngày trao cho bạn tấm bản đồ và bước đầu tiên. Bản lĩnh đến sau, qua rèn luyện trong đời sống thật, và tấm bản đồ cho bạn biết nên rèn điều gì trước, theo lối nào, cùng những ai.</p></details>
+      <details><summary>Tôi chưa học Soul of Life, có tham gia được chăng?</summary><p>Được, khi bạn đã có một nền tự hiểu biết tương đương. Bạn viết cho tôi vài dòng về chặng đường đã đi, và tôi sẽ nói thật với bạn điều tôi thấy.</p></details>
+      <details><summary>Đây là đào tạo, khai vấn hay trị liệu?</summary><p>Đây là một hành trình giáo dục và phát triển cá nhân, do một nhà tâm lý lâm sàng thiết kế và dẫn dắt. Bạn luôn tỉnh táo và luôn là người chủ động kiến tạo, và mọi điều bạn chia sẻ được giữ kín.</p></details>
+      <details><summary>Những buổi tối ở tầng giếng sâu diễn ra thế nào?</summary><p>Bằng hình ảnh nội tâm, trí tưởng tượng chủ động, nghi thức và chiêm nghiệm có dẫn dắt. Bạn ngồi thoải mái, nghe lời dẫn, để hình ảnh của riêng bạn hiện lên rồi ghi lại, giống như món quà Dấu chấm đầu tiên, chỉ sâu hơn và có người ngồi bên.</p></details>
+      <details><summary>Vì sao cần ở lại cùng nhau trọn bốn ngày?</summary><p>Vì lựa chọn một hướng đi cho phần đời sắp tới cần một khoảng lặng đủ dài, xa lịch sống quen thuộc. Khi ban ngày, buổi tối và giấc ngủ cùng làm việc cho một câu hỏi, tấm bản đồ bạn vẽ ra mang được cả lý trí lẫn tầng sâu của bạn, nên bạn tin nó và giữ được nó khi trở về.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="loi-cuoi">
+  <div class="wrap rv">
+    <p class="eyebrow">Trước khi bạn rời trang</p>
+    <h2>Cửa rừng ở ngay trước mặt, và tấm bản đồ của bạn đã đến lúc được vẽ chưa?</h2>
+    <p>Phần còn lại là một lá thư, nếu bạn còn cần thêm thông tin. Gửi cho chúng tôi câu hỏi của mình về hành trình, và nếu có, cả tấm thiếp ghi dấu chấm đầu tiên. Tôi đọc từng thông điệp, và hồi âm thật lòng về việc tấm bản đồ này có hợp với bạn lúc này hay chưa.</p>
+    <div class="acts">
+      <a class="cta peach" href="https://my-treasure-map.vercel.app/viet-cho-yen/" target="_blank" rel="noopener">Viết cho chúng tôi <span aria-hidden="true">↗</span></a>
+      <a class="ghost" href="https://gateway.solo2os.com/pay/cudjg2xt" target="_blank" rel="noopener">Đăng ký</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="else">
+    <p class="eyebrow">Một cách kể khác</p>
+    <p style="margin-top:12px">Nếu bạn yêu ngôn ngữ của biểu tượng, câu chuyện này còn một bản kể bằng hình ảnh khu rừng, những hang ngọc và ngọn núi trong mây.</p>
+    <div class="links">
+      <a href="https://my-treasure-map.vercel.app/" target="_blank" rel="noopener">Đọc bản kể bằng biểu tượng ↗</a>
+      <a href="../">Về hiên nhà của Phi Yên</a>
+    </div>
+  </section>
+  <footer class="foot">Vũ Phi Yên &amp; Claude AI</footer>
+</div>
+
+<audio id="nhac" src="assets/len-duong.mp3" loop preload="none"></audio>
+
+<script>
+(function(){
+  const root = document.documentElement;
+  root.classList.add("js");
+
+  /* Nền sáng là mặc định; người đọc tự chọn nền tối (dùng chung lựa chọn với hiên nhà) */
+  const mode = document.getElementById("mode");
+  function dat(toi){ root.setAttribute("data-mode", toi ? "dark" : "light"); mode.textContent = toi ? "Nền sáng" : "Nền tối"; }
+  try { if (localStorage.getItem("nen") === "toi") dat(true); } catch(e){}
+  mode.addEventListener("click", function(){
+    const toi = root.getAttribute("data-mode") !== "dark"; dat(toi);
+    try { localStorage.setItem("nen", toi ? "toi" : "sang"); } catch(e){}
+  });
+
+  /* Nhạc: nút chỉ hiện khi file nhạc đã có trong thư mục assets */
+  const nhac = document.getElementById("nhac"), am = document.getElementById("am");
+  fetch(nhac.getAttribute("src"), { method: "HEAD" }).then(function(r){ if (r.ok) am.hidden = false; }).catch(function(){});
+  am.addEventListener("click", function(){
+    if (nhac.paused){ nhac.volume = .5; nhac.play().then(function(){ am.textContent = "Tắt nhạc"; }).catch(function(){}); }
+    else { nhac.pause(); am.textContent = "Bật nhạc"; }
+  });
+
+  /* Các khối hiện dần khi cuộn tới */
+  const rv = document.querySelectorAll(".rv");
+  if ("IntersectionObserver" in window){
+    const io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold: .1 });
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add("in"); }); }
+})();
+</script>
+</body>
+</html>

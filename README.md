@@ -13,6 +13,9 @@ vpy-creator.github.io/
 ├── phong-tuong-lai/        Phòng Tương lai
 │   ├── index.html
 │   └── assets/
+├── my-treasure-map/        My Treasure Map (trang khóa học)
+│   ├── index.html
+│   └── assets/             ảnh bàn bản đồ, ảnh bàn tròn, nhạc lên đường
 ├── .nojekyll               GitHub Pages phục vụ file y nguyên, bỏ qua Jekyll
 └── README.md
 ```
@@ -21,6 +24,7 @@ vpy-creator.github.io/
 
 - Hiên nhà: `https://vpy-creator.github.io/`
 - Phòng Tương lai: `https://vpy-creator.github.io/phong-tuong-lai/`
+- My Treasure Map: `https://vpy-creator.github.io/my-treasure-map/`
 
 ## Thêm một căn phòng mới
 
