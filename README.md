@@ -15,7 +15,7 @@ vpy-creator.github.io/
 │   └── assets/
 ├── my-treasure-map/        My Treasure Map (trang khóa học)
 │   ├── index.html
-│   └── assets/             ảnh bàn bản đồ, ảnh bàn tròn, nhạc lên đường
+│   └── assets/             ảnh bản đồ buổi sớm, sổ thực địa, bàn tròn, nhạc lên đường
 ├── .nojekyll               GitHub Pages phục vụ file y nguyên, bỏ qua Jekyll
 └── README.md
 ```
