@@ -109,13 +109,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 /* Tấm thiệp trên bàn */
 .thiep{position:relative;color:#FAF6EC;padding:120px 0 130px;background:#141A45 url(assets/ban-tra.webp) center 38%/cover no-repeat;overflow:hidden}
 .thiep:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,26,69,.92) 0%,rgba(20,26,69,.55) 38%,rgba(20,26,69,0) 62%);pointer-events:none}
-.thiep .wrap{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:5%;align-items:center}
-.thiep .eyebrow{color:#FAF6EC;opacity:.8}
-.thiep h2{margin:14px 0 20px;font-size:clamp(30px,3.8vw,46px)}
-.thiep .say p{opacity:.92;max-width:27em;font-size:17px}
+.thiep .wrap{position:relative;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:7%;align-items:center}
+.thiep .q{margin:0 0 24px;font:italic 400 clamp(28px,3.2vw,40px)/1.3 'Lora',Georgia,serif;color:#FAF6EC}
+.thiep .q:before{content:'';display:block;width:46px;height:2px;margin-bottom:28px;background:var(--accent)}
+.thiep .say p:not(.q){opacity:.86;max-width:25em;font-size:16.5px}
 .thiep .textlink{margin-top:22px;color:#FAF6EC}
 .table{position:relative;min-height:440px}
-.float{position:absolute;left:31%;top:70%;width:min(440px,82vw);transform:translate(-50%,-50%);animation:float 7s ease-in-out infinite}
+.float{position:absolute;left:50%;top:70%;width:min(440px,82vw);transform:translate(-50%,-50%);animation:float 7s ease-in-out infinite}
 .card{position:relative;display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:3/2;padding:9% 9.5% 8.5%;background:#F3ECDD url(assets/thiep.webp) center/cover no-repeat;color:#141A45;text-decoration:none;overflow:hidden;border-radius:3px;transform:rotate(-6deg);box-shadow:0 40px 70px rgba(2,4,20,.65),0 2px 0 rgba(2,4,20,.3),inset 0 0 0 1px rgba(255,255,255,.18);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
 .card:hover,.card:focus-visible{transform:rotate(-1.5deg) translateY(-14px) scale(1.04);box-shadow:0 60px 90px rgba(2,4,20,.7),0 2px 0 rgba(2,4,20,.3),inset 0 0 0 1px rgba(255,255,255,.18)}
 .card:after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 42%,rgba(255,250,235,.38) 50%,transparent 58%);transform:translateX(-130%);animation:shine 7s ease-in-out infinite;pointer-events:none}
@@ -127,7 +127,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 .c-sub{font:italic 400 clamp(14px,3.8vw,17px)/1.55 'Lora',Georgia,serif;margin-top:2px}
 .c-place{margin-top:6px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#9A6A00}
 .c-open{background:#141A45;color:#F5B921;padding:8px 14px;font-size:11px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;box-shadow:0 6px 14px rgba(20,26,69,.25)}
-.cardshadow{position:absolute;left:31%;top:70%;width:min(440px,82vw);aspect-ratio:3/2;transform:translate(-50%,-50%) rotate(-6deg) translateY(28px);background:rgba(2,4,20,.5);filter:blur(28px);border-radius:12px;pointer-events:none}
+.cardshadow{position:absolute;left:50%;top:70%;width:min(440px,82vw);aspect-ratio:3/2;transform:translate(-50%,-50%) rotate(-6deg) translateY(28px);background:rgba(2,4,20,.5);filter:blur(28px);border-radius:12px;pointer-events:none}
 @keyframes float{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 10px))}}
 @keyframes shine{0%,62%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
 
@@ -253,9 +253,8 @@ input:focus,textarea:focus{outline:none;border-bottom-color:var(--accent);border
 <section class="thiep" id="thiep">
   <div class="wrap">
     <div class="say rv">
-      <p class="eyebrow">Tấm thiệp trên bàn</p>
-      <h2>Trên bàn trà có một tấm thiệp đang chờ bạn.</h2>
-      <p>Có những người đã đi qua chặng hỏi "tôi là ai", và giờ đang đứng trước cửa rừng với một câu hỏi khác: công trình của đời mình là gì? Mùa xuân tới, mình sẽ ngồi lại với một nhóm nhỏ ở Lâm Đồng để cùng nhau vẽ tấm bản đồ ấy, trước khi mỗi người bước vào khu rừng của riêng mình. Nếu bạn nghe thấy câu hỏi ấy trong lòng, tấm thiệp này là của bạn.</p>
+      <p class="q">Công trình của đời mình là&nbsp;gì?</p>
+      <p>Có những người đã đi qua chặng hỏi "tôi là ai", và giờ đang đứng trước cửa rừng với câu hỏi ấy. Mùa xuân tới, mình sẽ ngồi lại với một nhóm nhỏ ở Lâm Đồng để cùng nhau vẽ tấm bản đồ, trước khi mỗi người bước vào khu rừng của riêng mình.</p>
       <a class="textlink" href="my-treasure-map/">Mở tấm thiệp ↗</a>
     </div>
     <div class="table rv">
