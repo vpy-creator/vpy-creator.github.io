@@ -14,13 +14,15 @@ vpy-creator.github.io/
 │   └── hien-nha.mp3        nhạc hiên nhà
 ├── phong-khach/           Phòng khách (bảng khóa học, tủ sách, cửa sổ, cây quà tặng, hộp thư)
 │   ├── index.html
-│   └── assets/             tranh ban ngày và buổi tối, nhạc phòng khách
+│   └── assets/             tranh ban ngày và buổi tối, nhạc phòng khách, sach-qua/ (bìa sách thắt nơ dưới gốc mộc lan)
 ├── phong-tuong-lai/        Phòng Tương lai
 │   ├── index.html
 │   └── assets/
 ├── my-treasure-map/        My Treasure Map (trang khóa học)
 │   ├── index.html
-│   └── assets/             ảnh bản đồ buổi sớm, sổ thực địa, bàn tròn, nhạc lên đường
+│   ├── dau-cham-dau-tien/  món quà Dấu chấm đầu tiên (thiếp về Google Sheet qua Apps Script)
+│   ├── viet-cho-yen/       hộp thư của hành trình (cùng sổ với Dấu chấm đầu tiên, tab Thông điệp)
+│   └── assets/             ảnh bản đồ buổi sớm, sổ thực địa, bàn tròn, tranh bản đồ, nhạc lên đường, nhạc nền món quà
 ├── soul-of-life/           Soul of Life (trang khóa học, chàm đêm và ngọc lục)
 │   ├── index.html
 │   └── assets/             cây trong đêm, bàn đêm ánh nến
@@ -34,6 +36,8 @@ vpy-creator.github.io/
 - Phòng khách: `https://vpy-creator.github.io/phong-khach/`
 - Phòng Tương lai: `https://vpy-creator.github.io/phong-tuong-lai/`
 - My Treasure Map: `https://vpy-creator.github.io/my-treasure-map/`
+- Dấu chấm đầu tiên: `https://phiyenvu.com/my-treasure-map/dau-cham-dau-tien/`
+- Viết cho Yên (hộp thư hành trình): `https://phiyenvu.com/my-treasure-map/viet-cho-yen/`
 - Soul of Life: `https://vpy-creator.github.io/soul-of-life/`
 
 ## Thêm một căn phòng mới
@@ -60,3 +64,7 @@ GitHub Pages tự dựng lại trong khoảng một phút.
 ## Google Analytics
 
 Mọi trang trên website đều gắn cùng một thẻ Google Analytics `G-NNE6620MNK`, đặt ngay sau dòng `<meta charset="utf-8">`. Khi mở phòng mới, có thể chép thẻ từ `index.html` của Hiên nhà; nếu quên, GitHub tự gắn hộ: mỗi lần đẩy lên `main`, workflow `.github/workflows/google-analytics.yml` chạy `tools/kiem-ga.sh --gan`, gắn thẻ vào trang nào còn thiếu rồi tự commit. Muốn tự kiểm trên máy, chạy `bash tools/kiem-ga.sh`.
+
+## Quà dưới gốc mộc lan
+
+Trong `phong-khach/index.html`, mảng `QUA` giữ các gói quà, mảng `SACH` giữ những cuốn sách thắt nơ. Thêm một cuốn: đặt bìa 360 x 480 vào `phong-khach/assets/sach-qua/`, rồi thêm một dòng vào `SACH` (tên, tác giả, một câu giới thiệu, bìa, đường dẫn, độ nghiêng; bìa sáng màu thì thêm `chu` là màu chữ dát). Tuyệt đối không đặt link Phòng sách quý lên website, chỉ đặt link riêng của từng cuốn.

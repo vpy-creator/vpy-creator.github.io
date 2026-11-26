@@ -132,6 +132,20 @@ html[data-mode="dark"].no-night .scene .day,html[data-mode="dark"].no-night .cro
 .gift .bow:before{left:0;transform:rotate(-18deg)}.gift .bow:after{right:0;transform:rotate(18deg)}
 .gift:hover .lid,.gift:focus-visible .lid,.gift[aria-expanded="true"] .lid{transform:rotate(-16deg) translateY(-6px)}
 .gift:hover .bow,.gift:focus-visible .bow,.gift[aria-expanded="true"] .bow{transform:rotate(-16deg) translate(-12px,-10px)}
+/* Sách thắt nơ dưới gốc cây */
+.books{display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px 16px;margin-top:40px;padding:0 4px 14px;border-bottom:2px solid var(--sage)}
+.bk{position:relative;flex:0 0 auto;width:96px;aspect-ratio:3/4;padding:0;border:0;border-radius:3px 6px 6px 3px;background:#3a3a2a center/cover no-repeat;cursor:pointer;transform:rotate(var(--r,0deg));box-shadow:inset 6px 0 8px -4px rgba(0,0,0,.45),0 14px 18px -10px rgba(var(--sh),.55);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.bk .t{position:absolute;left:12%;right:12%;top:10%;font:600 10.5px/1.3 'Playfair Display',Georgia,serif;letter-spacing:.3px;text-align:center;color:var(--gilt,#F3D58A);text-shadow:0 1px 0 rgba(0,0,0,.5);pointer-events:none}
+.bk.light .t{text-shadow:none}
+.bk .rb{position:absolute;inset:0;pointer-events:none;transition:opacity .45s ease}
+.bk .rb:after{content:'';position:absolute;left:-3px;right:-3px;top:76%;height:8px;background:linear-gradient(#B8870A,#F5C842 45%,#B8870A);box-shadow:0 2px 3px rgba(0,0,0,.3)}
+.bk .nb{position:absolute;left:50%;top:76%;width:34px;height:20px;margin:-10px 0 0 -17px;pointer-events:none;transition:opacity .45s ease,transform .45s ease}
+.bk .nb:before,.bk .nb:after{content:'';position:absolute;top:0;width:15px;height:13px;border:2.5px solid #EDA900;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:rgba(237,169,0,.15)}
+.bk .nb:before{left:0;transform:rotate(-20deg)}.bk .nb:after{right:0;transform:rotate(20deg)}
+.bk:hover,.bk:focus-visible,.bk[aria-expanded="true"]{transform:rotate(0deg) translateY(-14px);box-shadow:inset 6px 0 8px -4px rgba(0,0,0,.45),0 26px 26px -14px rgba(var(--sh),.6)}
+.bk:hover .rb,.bk:focus-visible .rb,.bk[aria-expanded="true"] .rb{opacity:0}
+.bk:hover .nb,.bk:focus-visible .nb,.bk[aria-expanded="true"] .nb{opacity:0;transform:translateY(-16px) rotate(-12deg)}
+.inside .by{margin:2px 0 0;font:italic 400 15px/1.6 'Lora',Georgia,serif;color:var(--soft)}
 .inside{margin-top:26px;max-width:30em;padding:24px 26px;background:var(--paper2);border:1.5px solid var(--hair);border-radius:16px}
 .inside[hidden]{display:none}
 .inside h3{font-size:22px;font-weight:600;line-height:1.45}
@@ -180,6 +194,9 @@ input:focus,textarea:focus{outline:none;border-color:var(--accent)}
   .duo.flip .crop{order:0}
   .crop.win{max-width:none;aspect-ratio:4/3;background-size:250% auto;background-position:0 15%}
   .crop.tree{max-width:300px;justify-self:center}
+  .books{gap:16px 12px;justify-content:center}
+  .bk{width:calc(33.33% - 12px);max-width:112px}
+  .bk .t{font-size:10px}
   .foot{margin-top:80px}
 }
 @media(prefers-reduced-motion:reduce){
@@ -303,8 +320,9 @@ input:focus,textarea:focus{outline:none;border-color:var(--accent)}
     <div class="crop tree rv" role="img" aria-label="Cây mộc lan thắt ruy băng vàng, dưới gốc là những gói quà."></div>
     <div class="rv">
       <h2>Quà tặng bạn</h2>
-      <p>Dưới gốc mộc lan có mấy gói quà mình để sẵn. Bạn thích gói nào thì cứ mở nhé.</p>
+      <p>Dưới gốc mộc lan có mấy gói quà mình để sẵn, và cả những cuốn sách đã thắt nơ để bạn mang về đọc. Bạn thích món nào thì cứ mở nhé.</p>
       <div class="gifts" id="gifts"></div>
+      <div class="books" id="books" aria-label="Những cuốn sách thắt nơ dưới gốc cây"></div>
       <div class="inside" id="inside" hidden aria-live="polite"></div>
     </div>
   </div>
@@ -345,7 +363,16 @@ const THU_CUA_YEN = { loi: [], ky: "" };
 
 /* Quà dưới gốc mộc lan. Mỗi món quà là một dòng: tên, một câu giới thiệu, đường dẫn. */
 const QUA = [
-  { ten: "Dấu chấm đầu tiên", loi: "Món quà ban ngày mời bạn ra đứng ở khoảng trống trước hàng cây.", link: "https://my-treasure-map.vercel.app/dau-cham-dau-tien/" }
+  { ten: "Dấu chấm đầu tiên", loi: "Món quà ban ngày mời bạn ra đứng ở khoảng trống trước hàng cây.", link: "../my-treasure-map/dau-cham-dau-tien/" }
+];
+
+/* Sách thắt nơ dưới gốc mộc lan. Mỗi cuốn là một dòng: tên, tác giả, một câu giới thiệu, bìa, đường dẫn, độ nghiêng. */
+const SACH = [
+  { ten: "Mô hình Xoắn động", tacgia: "Vũ Phi Yên, ấn bản đọc trọn trên màn hình", loi: "Gien tinh thần hay sự thật về tâm lý con người, nay được đọc trọn trên màn hình, có tranh mở chương vẽ mới.", bia: "assets/sach-qua/mo-hinh-xoan-dong.webp", link: "https://mo-hinh-xoan-dong-ebook.vercel.app/", r: -3 },
+  { ten: "Bàn đọc chậm Xoắn động", tacgia: "Bàn đọc của lớp Soul of Life", loi: "Đọc chậm một cuốn sách để thấy những hệ giá trị đang chuyển động trong chính mình, và trong một người bạn thương.", bia: "assets/sach-qua/ban-doc-xoan-dong.webp", link: "https://soul-of-life.vercel.app/ban-doc-xoan-dong-gh8tuvhwnqvf/", r: 2 },
+  { ten: "Tình yêu hạnh phúc có tồn tại?", tacgia: "Guy Corneau, bản dịch của Yên", loi: "Guy Corneau dẫn người đọc đi qua vết thương với cha và mẹ, để chạm tới một tình yêu hạnh phúc bắt đầu từ việc thấu hiểu chính mình.", bia: "assets/sach-qua/tinh-yeu-hanh-phuc.webp", link: "https://doctron-docsau-sachlamgiangiao.vercel.app/tinh-yeu-hanh-phuc-co-ton-tai-yg4b5y3cy57t/", r: -1.5 },
+  { ten: "Đảo thôi miên", tacgia: "Vũ Phi Yên", loi: "Hành trình vào các vùng đất của tâm hồn, từ Vô thức tới Toàn thức, trong ấn bản đọc trọn có tranh giấy cắt và nhạc nền.", bia: "assets/sach-qua/dao-thoi-mien.webp", link: "https://doctron-docsau-sachlamgiangiao.vercel.app/dao-thoi-mien-e5g7sxw99a3j/", r: 2.5, chu: "#8A6418" },
+  { ten: "Hiện đại tích về vũ trụ", tacgia: "Olivier Lockert", loi: "Chúng ta vừa là họa sĩ, vừa là bức tranh đang được vẽ.", bia: "assets/sach-qua/hien-dai-tich-ve-vu-tru.webp", link: "https://doctron-docsau-sachlamgiangiao.vercel.app/hien-dai-tich-ve-vu-tru-uhyg55y53epw/", r: -2 }
 ];
 
 /* Hộp thư chung của website: thư từ phòng khách vào tab riêng của nó trong sổ thư. */
@@ -419,7 +446,7 @@ const LOI = { thieu: "Bạn viết vài dòng rồi hãy gửi nhé.", dangGui: 
     b.innerHTML = '<span class="box"></span><span class="lid"></span><span class="bow"></span><span class="seal"></span>';
     b.addEventListener("click", function(){
       const dangMo = b.getAttribute("aria-expanded") === "true";
-      gifts.querySelectorAll(".gift").forEach(function(g){ g.setAttribute("aria-expanded", "false"); });
+      document.querySelectorAll(".gift,.bk").forEach(function(g){ g.setAttribute("aria-expanded", "false"); });
       if (dangMo){ inside.hidden = true; return; }
       b.setAttribute("aria-expanded", "true");
       inside.textContent = "";
@@ -429,6 +456,32 @@ const LOI = { thieu: "Bạn viết vài dòng rồi hãy gửi nhé.", dangGui: 
       inside.append(h, p, a); inside.hidden = false;
     });
     gifts.appendChild(b);
+  });
+
+  /* Sách thắt nơ: chạm vào thì nơ tuột ra, lời giới thiệu hiện bên dưới */
+  const books = document.getElementById("books");
+  SACH.forEach(function(q){
+    const b = document.createElement("button");
+    b.className = "bk"; b.type = "button"; b.setAttribute("aria-expanded", "false"); b.setAttribute("aria-label", "Mở cuốn sách " + q.ten);
+    b.style.backgroundImage = "url(" + q.bia + ")"; b.style.setProperty("--r", (q.r || 0) + "deg");
+    if (q.chu){ b.classList.add("light"); b.style.setProperty("--gilt", q.chu); }
+    const t = document.createElement("span"); t.className = "t"; t.textContent = q.ten;
+    const rb = document.createElement("span"); rb.className = "rb";
+    const nb = document.createElement("span"); nb.className = "nb";
+    b.append(t, rb, nb);
+    b.addEventListener("click", function(){
+      const dangMo = b.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".gift,.bk").forEach(function(g){ g.setAttribute("aria-expanded", "false"); });
+      if (dangMo){ inside.hidden = true; return; }
+      b.setAttribute("aria-expanded", "true");
+      inside.textContent = "";
+      const h = document.createElement("h3"); h.textContent = q.ten;
+      const by = document.createElement("p"); by.className = "by"; by.textContent = q.tacgia;
+      const p = document.createElement("p"); p.textContent = q.loi;
+      const a = document.createElement("a"); a.className = "textlink"; a.href = q.link; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Mở sách ↗";
+      inside.append(h, by, p, a); inside.hidden = false;
+    });
+    books.appendChild(b);
   });
 
   /* Lá thư của Yên */
